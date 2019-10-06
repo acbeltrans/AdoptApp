@@ -21,7 +21,7 @@ export default function Circulo(props) {
       <View>
         <Text></Text>
         <TouchableOpacity
-            onPress={handleOnPress}
+            onPress={(handleOnPress)}
             style = {styles.btn}
           >
             <Text style = {styles.txt}>{props.text}</Text>
@@ -34,7 +34,7 @@ export default function Circulo(props) {
       <View>
           <Text></Text>
           <TouchableOpacity
-            onPress={handleOnPress}
+            onPress={(handleOnPress)}
             style = {styles.btnSelected}
           >
             <Text style = {styles.txt}>{props.text}</Text>
@@ -60,4 +60,5 @@ const styles = StyleSheet.create({
       txt: {
         fontSize: 30,
       }
-});
+}) ;
+export {styles}
