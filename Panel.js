@@ -76,7 +76,7 @@ const _displayData = async () => {
 
 
               <View>
-        <Circulo  text="Pequeño"></Circulo>
+        <Circulo text="Pequeño"></Circulo>
         <Circulo text="Mediano"></Circulo>
         <Circulo text="Grande"></Circulo>
         <Circulo text="Activo"></Circulo>
@@ -98,21 +98,18 @@ const _displayData = async () => {
  <Button
           title="Aceptar"
           color="#2e8b57"
-          onPress={() => _displayData()}
+          onPress={() => Alert.alert('Mirar como guardar la informacion')}
  />
 
  <Button
           title="Cancelar"
           color="#ff0000"
-onPress={() => _storeData()}
+          onPress={() =>   Alert.alert('Hacer que vuelva al estado inicial')}
         />
-
 
 
 
     </View>
 
-
- );
-_
+  );
 }
