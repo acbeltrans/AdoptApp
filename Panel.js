@@ -11,16 +11,14 @@ import {
 import Circulo from "./Circulo.js";
 
 export default function Panel() {
-const [stateCircle, setStateCircle] = useState(false);
-const [txtCircle, setTxtCircle] = useState("");
+  const [stateCircle, setStateCircle] = useState(false);
+  const [txtCircle, setTxtCircle] = useState("");
 
 function handleCircle (stateCircle, txtCircle) {
   setStateCircle(stateCircle);
   setTxtCircle(txtCircle);
 }
 
-console.log(stateCircle);
-console.log(txtCircle);
 
 const _storeData = async () => {
   try {
@@ -73,6 +71,68 @@ const _displayData = async () => {
   }
 };
 
+const _changeData = async (stateCircle, txtCircle) =>{
+  if ( txtCircle=="Pequeño" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('pequeño', 'si');}
+  else {await AsyncStorage.setItem('pequeño', 'no');}
+  }
+  else if ( txtCircle=="Mediano" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('mediano', 'si');}
+  else {await AsyncStorage.setItem('mediano', 'no');}
+  }
+  else if ( txtCircle=="Grande" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('grande', 'si');}
+  else {await AsyncStorage.setItem('grande', 'no');}
+  }
+  else if ( txtCircle=="Activo" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('activo', 'si');}
+  else {await AsyncStorage.setItem('activo', 'no');}
+  }
+  else if ( txtCircle=="Adulto" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('adulto', 'si');}
+  else {await AsyncStorage.setItem('adulto', 'no');}
+  }
+  else if ( txtCircle=="Bebe" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('bebe', 'si');}
+  else {await AsyncStorage.setItem('bebe', 'no');}
+  }
+  else if ( txtCircle=="Gato" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('gato', 'si');}
+  else {await AsyncStorage.setItem('gato', 'no');}
+  }
+  else if ( txtCircle=="Perro" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('perro', 'si');}
+  else {await AsyncStorage.setItem('perro', 'no');}
+  }
+  else if ( txtCircle=="Pelo largo" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('peloL', 'si');}
+  else {await AsyncStorage.setItem('peloL', 'no');}
+  }
+  else if ( txtCircle=="Pelo corto" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('peloC', 'si');}
+  else {await AsyncStorage.setItem('peloC', 'no');}
+  }
+  else if ( txtCircle=="Sedentario" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('sedentario', 'si');}
+  else {await AsyncStorage.setItem('sedentario', 'no');}
+  }
+  else if ( txtCircle=="Sociable" ){
+   if (stateCircle==true){
+    await AsyncStorage.setItem('sociable', 'si');}
+  else {await AsyncStorage.setItem('sociable', 'no');}
+  }
+}
 
   return (
 
@@ -81,33 +141,33 @@ const _displayData = async () => {
 
       <View style={{flexDirection: 'row'}}>
         <View>
-          <Circulo text="Pequeño" circle={handleCircle}></Circulo>
-          <Circulo text="Mediano" circle={handleCircle}></Circulo>
-          <Circulo text="Grande" circle={handleCircle}></Circulo>
-          <Circulo text="Activo" circle={handleCircle}></Circulo>
-          <Circulo text="Adulto" circle={handleCircle}></Circulo>
-          <Circulo text="Bebe" circle={handleCircle}></Circulo>
+          <Circulo text="Pequeño" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Mediano" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Grande" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Activo" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Adulto" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Bebe" circle={(handleCircle,_changeData)}></Circulo>
         </View>
         <View>
-          <Circulo text="Gato" circle={handleCircle}></Circulo>
-          <Circulo text="Perro" circle={handleCircle}></Circulo>
-          <Circulo text="Pelo largo" circle={handleCircle}></Circulo>
-          <Circulo text="Pelo corto" circle={handleCircle}></Circulo>
-          <Circulo text="Sedentario" circle={handleCircle}></Circulo>
-          <Circulo text="Sociable" circle={handleCircle}></Circulo>
+          <Circulo text="Gato" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Perro" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Pelo largo" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Pelo corto" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Sedentario" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Sociable" circle={(handleCircle,_changeData)}></Circulo>
         </View>
       </View>
 
       <Button
         title="Aceptar"
         color="#2e8b57"
-        onPress={() => Alert.alert('Mirar como guardar la informacion')}
+        onPress={() => _displayData()}
       />
 
       <Button
         title="Cancelar"
         color="#ff0000"
-        onPress={() => Alert.alert('Hacer que vuelva al estado inicial')}
+        onPress={() => _storeData()}
       />
     </View>
 
