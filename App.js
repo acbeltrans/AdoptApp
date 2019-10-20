@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {Text, View} from 'react-native';
+import { View, Text } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import Panel from './Panel.js';
 
-export default class App extends Component {
+class HomeScreen extends React.Component {
   render() {
     return (
       <View>
@@ -10,5 +12,23 @@ export default class App extends Component {
         {<Panel></Panel>}
       </View>
     );
+  }
+}
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Filter: Panel,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
   }
 }
