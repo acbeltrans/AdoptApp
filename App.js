@@ -10,7 +10,7 @@ class HomeScreen extends React.Component {
     return (
       <View>
         <Text>AdoptApp</Text>
-        
+         
         {<Panel></Panel>}
         
       </View>

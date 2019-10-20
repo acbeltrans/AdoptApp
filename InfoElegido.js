@@ -17,10 +17,16 @@ export default class InfoElegido extends Component{
         
         this.state={
             Data: Data,
-            nn: 'Farlee',
+            nn: 'Chick',
+            show: false,
         }
+        this.toggleDiv=this.toggleDiv.bind(this)
     }
 
+    toggleDiv=() =>{
+        const{show}=this.state;
+        this.setState({show:!show})
+    }
     
     render(){
         return(
@@ -35,27 +41,50 @@ export default class InfoElegido extends Component{
                                 <Text style={styles.sub2Text}>Fundación: {perro.fundacion}</Text>
                                 <Text></Text>
                                 <Text style={styles.sub3Text}>{perro.historia}</Text>
-                                <Text></Text>
-                                <Button onPress={this.onPress} title="adoptar"/>
+                               
 
                             </View>
                         )
                     })
+                    
                 }
+                <View style={containerStyle.rowContainer}>
+                    <Button onPress={this.toggleDiv} title="adoptar"/>
+                    <Button onPress={this.toggleDiv} title="apadrinar"/>
+                    
+                </View>
+                {this.state.show && <Box />}
             </View>
         )
     }
     
 }
 
-onPress=()=>{
-    alert('Adoptame!!!')
+class Box extends Component{
+    render(){
+        return(
+            <View style={containerStyle.rowContainer}>
+                <Image style={{width: 70, height: 70}} source={{uri: 'https://st2.depositphotos.com/8663904/11553/v/950/depositphotos_115535254-stock-illustration-gps-icon-black-icon-on.jpg'}}/>
+                <Text></Text>
+                <Image style={{width: 70, height: 70}} source={{uri: 'https://st2.depositphotos.com/8663904/11553/v/950/depositphotos_115535044-stock-illustration-phone-icon-black-icon-on.jpg'}}/>
+                <Text></Text>
+                <Image style={{width: 70, height: 70}} source={{uri: 'https://st2.depositphotos.com/8663904/11553/v/950/depositphotos_115535082-stock-illustration-envelope-or-message-icon-black.jpg'}}/>
+            </View>
+        )
+    }
 }
+
+const containerStyle = StyleSheet.create({
+    rowContainer: {
+      flexDirection: 'row',
+      alignSelf: 'center',
+    }
+  });
 
 const styles= StyleSheet.create({
     titleText:{
         fontFamily:'Times New Roman',
-        fontSize: 60,
+        fontSize: 50,
         fontWeight: 'bold',
         textAlign: 'center' 
     },
@@ -72,7 +101,7 @@ const styles= StyleSheet.create({
     },
     sub3Text:{
         fontFamily:'Times New Roman',
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'center' 
     }
 });
