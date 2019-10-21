@@ -12,8 +12,9 @@ import {
 export default function Circulo(props) {
   const [myState, setMyState] = useState(false);
 
-  function handleOnPress (){
-    setMyState(!myState)
+  function handleOnPress () {
+    setMyState(!myState);
+    {props.circle(!myState, props.text)}
   }
 
   if (!myState){
@@ -21,11 +22,11 @@ export default function Circulo(props) {
       <View>
         <Text></Text>
         <TouchableOpacity
-            onPress={handleOnPress}
+            onPress={(handleOnPress)}
             style = {styles.btn}
-          >
-            <Text style = {styles.txt}>{props.text}</Text>
-          </TouchableOpacity>
+        >
+          <Text style = {styles.txt}>{props.text}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -34,7 +35,7 @@ export default function Circulo(props) {
       <View>
           <Text></Text>
           <TouchableOpacity
-            onPress={handleOnPress}
+            onPress={(handleOnPress)}
             style = {styles.btnSelected}
           >
             <Text style = {styles.txt}>{props.text}</Text>

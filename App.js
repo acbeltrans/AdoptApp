@@ -1,28 +1,54 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import Panel from './Panel.js';
+import InfoElegido from './InfoElegido.js';
 
-import Login from './src/components/login/Login'
-import Registration from './src/components/registration/Registration'
-import { styles } from './Circulo.js';
-
-export default class App extends Component {
+class HomeScreen extends React.Component {
+  static navigationOption = {
+    title:'Home',
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Login/>
+      <View>
+        <Text>AdoptApp</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Filter')}
+        />
       </View>
     );
-
-    
   }
-  // define your styles
-  
-  styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      backgroundColor: 'red',
-    }
-  });
+}
+
+class FilterScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+        {<Panel></Panel>}
+        
+      </View>
+    );
+  }
+}
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Elegido: InfoElegido,
+    Filter: FilterScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
 }
