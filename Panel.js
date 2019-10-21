@@ -1,27 +1,46 @@
 import React, { useState } from 'react';
 import {
-  StyleSheet,
+ScrollView,
+    RefreshControl,
   Button,
   View,
-  SafeAreaView,
   Text,
   Alert,
-    AsyncStorage,TouchableOpacity,TouchableHighlight
+    StyleSheet,
+    SafeAreaView,
+    AsyncStorage,Dimensions,
 } from 'react-native';
+import Constants from 'expo-constants';
 import Circulo from "./Circulo.js";
-
-export default function Panel() {
-  const [stateCircle, setStateCircle] = useState(false);
+function wait(timeout) {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+}
+export default function Panel () {
+const [stateCircle, setStateCircle] = useState(false);
   const [txtCircle, setTxtCircle] = useState("");
+ const [refreshing, setRefreshing] = React.useState(false);
+const estado = useState(false);
+const onRefresh = React.useCallback(() => {
+      setRefreshing(true);
 
+    wait(2000).then(() => setRefreshing(false));
+  }, [refreshing]);
 function handleCircle (stateCircle, txtCircle) {
   setStateCircle(stateCircle);
   setTxtCircle(txtCircle);
 }
+function start(estado){
 
-
+    if (!this.state){
+        estado = true;
+        _storeData();
+    }
+}
 const _storeData = async () => {
   try {
+
     await AsyncStorage.setItem('perro', 'no');
     await AsyncStorage.setItem('pequeño', 'no');
     await AsyncStorage.setItem('gato', 'no');
@@ -70,6 +89,7 @@ const _displayData = async () => {
     alert("error guardando los datos")
   }
 };
+
 
 const _changeData = async (stateCircle, txtCircle) =>{
   if ( txtCircle=="Pequeño" ){
@@ -134,42 +154,63 @@ const _changeData = async (stateCircle, txtCircle) =>{
   }
 }
 
-  return (
 
-    <View>
-      <Text style= {{fontSize: 23,fontWeight: 'bold',textAlign:'center'}}>¿Cómo es tu mascota ideal ?</Text>
 
-      <View style={{flexDirection: 'row'}}>
+return (
+
+
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+        scrollEnabled={true}
+      >
+         <Text style= {{fontSize: 23,fontWeight: 'bold',textAlign:'center'}}>¿Cómo es tu mascota ideal ?</Text>
+          <Text style= {{fontSize: 10,fontWeight: 'bold',textAlign:'center'}}>Para reiniciar los filtros , deslice hacia abajo</Text>
+
+          <View style={{flexDirection: 'row'}}>
         <View>
-          <Circulo text="Pequeño" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Mediano" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Grande" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Activo" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Adulto" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Bebe" circle={(handleCircle,_changeData)}></Circulo>
+          <Circulo text="Pequeño" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Mediano" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Grande" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Activo" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Adulto" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Bebe" circle={(start(estado),handleCircle,_changeData)}></Circulo>
         </View>
-        <View>
-          <Circulo text="Gato" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Perro" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Pelo largo" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Pelo corto" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Sedentario" circle={(handleCircle,_changeData)}></Circulo>
-          <Circulo text="Sociable" circle={(handleCircle,_changeData)}></Circulo>
-        </View>
-      </View>
+              <View>
+          <Circulo text="Gato" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Perro" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Pelo largo" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Pelo corto" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Sedentario" circle={(start(estado),handleCircle,_changeData)}></Circulo>
+          <Circulo text="Sociable" circle={(start(estado),handleCircle,_changeData)}></Circulo>
 
-      <Button
+        </View>
+
+          </View>
+
+               <Button
         title="Aceptar"
         color="#2e8b57"
         onPress={() => _displayData()}
       />
 
-      <Button
-        title="Cancelar"
-        color="#ff0000"
-        onPress={() => _storeData()}
-      />
-    </View>
+      </ScrollView>
 
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+  },
+  scrollView: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+
+
+  },
+});
