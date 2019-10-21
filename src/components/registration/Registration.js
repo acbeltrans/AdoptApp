@@ -7,17 +7,47 @@ import Login from '../login/Login'
 class Registration extends Component {
 
     state = {
-        showLogin: false
+        showLogin: false,
+        username: '',
+        nombre: '',
+        apellido: '',
+        correo: '',
+        password: '',
+        confirmPassword: '',
+
     }
 
 
-    handleShowLogin(){
+    handleShowLogin() {
         console.log("Adentro de funcon onpress");
         console.log(this.state.showLogin);
-        this.setState({showLogin: !this.state.showLogin});
+        this.setState({ showLogin: !this.state.showLogin });
     }
+
+    handleClickRegister() {
+        //const writeJsonFile = require('write-json-file');
+
+        if (this.state.username != '' && this.state.nombre != '' && this.state.apellido != '' && this.state.correo != '' && this.state.password != '' && this.state.confirmPassword != '') {
+            console.log("Se llenaron todos los campos");
+
+            if (this.state.password === this.state.confirmPassword) {
+                let usuario = {
+                    username: this.state.username,
+                    nombre: this.state.nombre,
+                    apellido: this.state.apellido,
+                    correo: this.state.correo,
+                    password: this.state.password
+                }
+                
+            }
+
+        } else {
+            console.log('Hace falta llenar todos los campos');
+        }
+    }
+
     render() {
-        if(this.state.showLogin) return <Login/>
+        if (this.state.showLogin) return <Login />
         return (
             <View style={styles.regform}>
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
@@ -25,6 +55,7 @@ class Registration extends Component {
                     placeholder="Username"
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
+                    onChangeText={(userVal) => { this.setState({ username: userVal }) }}
                     autoCapitalize="none"
                     autoCorrect={false}
                     style={styles.input} />
@@ -32,6 +63,7 @@ class Registration extends Component {
                     placeholder="Nombre"
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
+                    onChangeText={(nombreVal) => { this.setState({ nombre: nombreVal }) }}
                     autoCapitalize="none"
                     autoCorrect={false}
                     style={styles.input} />
@@ -39,6 +71,7 @@ class Registration extends Component {
                     placeholder="Apellido"
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
+                    onChangeText={(apellidoVal) => { this.setState({ apellido: apellidoVal }) }}
                     keyboardType="email-address"
                     autoCapitalize="none"
                     autoCorrect={false}
@@ -47,6 +80,7 @@ class Registration extends Component {
                     placeholder="Email"
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
+                    onChangeText={(emailVal) => { this.setState({ correo: emailVal }) }}
                     keyboardType="email-address"
                     autoCapitalize="none"
                     autoCorrect={false}
@@ -56,6 +90,7 @@ class Registration extends Component {
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     secureTextEntry
                     returnKeyType="next"
+                    onChangeText={(passwordVal) => { this.setState({ password: passwordVal }) }}
                     ref={(input) => this.passwordInput = input}
                     style={styles.input} />
                 <TextInput
@@ -63,16 +98,19 @@ class Registration extends Component {
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     secureTextEntry
                     returnKeyType="go"
+                    onChangeText={(confirmPassVal) => { this.setState({ confirmPassword: confirmPassVal }) }}
                     ref={(input) => this.passwordInput = input}
                     style={styles.input} />
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity
+                    style={styles.buttonContainer}
+                    onPress={this.handleClickRegister.bind(this)}>
                     <Text style={styles.buttonText}>
                         REGISTRARSE
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.buttonContainerCancelar}
-                    onPress= {this.handleShowLogin.bind(this)}>
+                    onPress={this.handleShowLogin.bind(this)}>
                     <Text style={styles.buttonText}>
                         CANCELAR
                     </Text>
@@ -106,7 +144,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20
     },
-    buttonContainer:{
+    buttonContainer: {
         backgroundColor: '#2ecc71',
         paddingVertical: 15,
         height: 45,
