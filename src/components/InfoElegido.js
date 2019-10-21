@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
-import Data from "./data/infoperros.json";
+import Data from '../../data/infoperros.json';
 
 function ayuda(nn) {
     return function(x) {
