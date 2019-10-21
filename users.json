@@ -1,0 +1,16 @@
+[
+    {
+        "username": "juanesmendez",
+        "nombre": "Juan Esteban",
+        "apellido": "Mendez",
+        "correo": "je.mendez@uniandes.edu.co",
+        "password": "12345"
+    },
+    {
+        "username": "hectorcastellanos",
+        "nombre": "Hector",
+        "apellido": "Castellanos",
+        "correo": "h.castellanos@uniandes.edu.co",
+        "password": "12345"
+    }
+]
