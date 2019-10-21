@@ -16,11 +16,12 @@ class LoginForm extends Component {
     }
 
     grantAccess() {
-        const data = require('../../../users.json');
+        const data = require('../../../data/users.json');
         for (let u of data) {
             console.log(u["apellido"]);
+            console.log(u["username"]);
             if (u["username"] === this.state.username && u["password"] === this.state.password) {
-                console.log("ACCESO APROVADO");
+                console.log("ACCESO APROBADO");
                 break;
             }
         }
