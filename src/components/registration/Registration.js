@@ -37,7 +37,23 @@ class Registration extends Component {
                     apellido: this.state.apellido,
                     correo: this.state.correo,
                     password: this.state.password
-                }
+                };
+                console.log(usuario);
+
+                fetch('http://172.20.10.9:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user: usuario
+                    }),
+                }).catch( error => {
+                    console.log(error);
+                    //this.handleShowLogin();
+                });
+                this.handleShowLogin();
                 
             }
 
