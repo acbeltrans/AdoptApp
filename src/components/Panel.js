@@ -23,6 +23,7 @@ export default function Panel() {
   const [txtCircle, setTxtCircle] = useState("");
   const [refreshing, setRefreshing] = React.useState(false);
   const estado = useState(false);
+  const idUser = "2";
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
@@ -53,12 +54,20 @@ export default function Panel() {
       await AsyncStorage.setItem("bebe", "no");
       await AsyncStorage.setItem("sociable", "no");
     } catch (error) {
-      // Error saving data
+
     }
   };
 
   const _displayData = async () => {
-    try {
+
+ //let response = await fetch(
+     // 'http://157.253.241.84:3000/users?id='+idUser ,
+    //);
+    // let user = await response.json().then(data => console.log(data.user));
+     //let id = user['id'];
+     //console.log(id);
+
+
       const perro = await AsyncStorage.getItem("perro");
       const pequeño = await AsyncStorage.getItem("pequeño");
       const gato = await AsyncStorage.getItem("gato");
@@ -71,47 +80,41 @@ export default function Panel() {
       const sedentario = await AsyncStorage.getItem("sedentario");
       const bebe = await AsyncStorage.getItem("bebe");
       const sociable = await AsyncStorage.getItem("sociable");
-      alert(
-        "perro: " +
-          perro +
-          "\n" +
-          "pequeño: " +
-          pequeño +
-          "\n" +
-          "gato: " +
-          gato +
-          "\n" +
-          "mediano: " +
-          mediano +
-          "\n" +
-          "grande: " +
-          grande +
-          "\n" +
-          "pelo largo: " +
-          peloL +
-          "\n" +
-          "activo: " +
-          activo +
-          "\n" +
-          "pelo corto: " +
-          peloC +
-          "\n" +
-          "adulto: " +
-          adulto +
-          "\n" +
-          "Sedentario: " +
-          sedentario +
-          "\n" +
-          "bebe: " +
-          bebe +
-          "\n" +
-          "sociable: " +
-          sociable +
-          "\n"
-      );
-    } catch (error) {
-      alert("error guardando los datos");
-    }
+      let usuario = {
+                   username: "y",
+                    nombre: "y",
+                    apellido: "y",
+                    correo: "y",
+                    password: "y",
+        filtros: [
+          {
+            perro: perro,
+            gato: gato,
+            pequeno: pequeño,
+            mediano: mediano,
+            grande: grande,
+            peloLargo: peloL,
+            peloCorto: peloC,
+            activo: activo,
+            sedentario: sedentario,
+            sociable: sociable,
+            adulto: adulto,
+            bebe: bebe,
+          }]
+      };
+
+      fetch('http://157.253.241.84:3000/users/'+idUser, {
+                    method: 'PUT',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user: usuario
+                    }),
+                }).catch( error => {
+console.log("hubo un error");
+                });
   };
 
   const _changeData = async (stateCircle, txtCircle) => {

@@ -36,11 +36,27 @@ class Registration extends Component {
                     nombre: this.state.nombre,
                     apellido: this.state.apellido,
                     correo: this.state.correo,
-                    password: this.state.password
+                    password: this.state.password,
+                    filtros: {
+                        perro: "no",
+                        gato: "no",
+                        pequeno: "no",
+                        mediano: "no",
+                        grande: "no",
+                        peloLargo: "no",
+                        peloCorto: "no",
+                        activo: "no",
+                        sedentario: "no",
+                        sociable: "no",
+                        adulto: "no",
+                        bebe: "no"
+                    }
+
+
                 };
                 console.log(usuario);
 
-                fetch('http://172.20.10.9:3000/users', {
+                fetch('http://157.253.241.84:3000/users', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
