@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, Dimensions, Image, Animated, PanResponder } from 'react-native';
+import { View, Text, Button, StyleSheet, Dimensions, Image, Animated, PanResponder, TouchableHighlight } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Panel from './src/components/Panel';
 import InfoElegido from './src/components/InfoElegido';
 import Login from './src/components/login/Login';
 import Registration from "./src/components/registration/Registration";
+import { TouchableOpacity } from 'react-native-gesture-handler';
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
@@ -28,6 +29,7 @@ class SwipeScreen extends React.Component {
     super()
 
     this.position = new Animated.ValueXY()
+
     this.state ={
       currentIndex: 0
     }
@@ -80,25 +82,22 @@ class SwipeScreen extends React.Component {
       },
 
       onPanResponderRelease:(etv,gestureState) => {
-/*
         if(gestureState.dx>120){
           Animated.spring(this.position,{
-            toValue:{x:SCREEN_WIDTH + 100, y: gestureState.dy}
-          }).start(() => {
-            this.setState( {currentIndex: this.state.currentIndex + 1}, ()=>{this.position.setValue({x:0,y:0})})
-          })
+            toValue:{x:SCREEN_WIDTH+100,y:gestureState.dy}
+          }).start(()=>{this.setState({currentIndex:this.state.currentIndex+1},()=>{this.position.setValue({x:0,y:0})})})
         }
-        else if(gestureState.dx < -120) {
+        else if(gestureState.dx < -120){
           Animated.spring(this.position,{
-            toValue:{x:SCREEN_WIDTH - 100, y: gestureState.dy}
-          }).start(() => {
-            this.setState( {currentIndex: this.state.currentIndex + 1}, ()
-            =>{
-              this.position.setValue({x:0,y:0})
-            })
-          })
+            toValue:{x:-SCREEN_WIDTH-100,y:gestureState.dy}
+          }).start(()=>{this.setState({currentIndex:this.state.currentIndex+1},()=>{this.position.setValue({x:0,y:0})})})
         }
-        */
+        else{
+          Animated.spring(this.position,{
+            toValue: {x:0,y:0},
+            friction: 4
+          }).start()
+        }
       }
 
     })
@@ -131,12 +130,13 @@ class SwipeScreen extends React.Component {
             <Text style={{ borderWidth: 1, borderColor: 'red', color: 'red', fontSize:32, fontWeight: '800', padding: 10 }}>NOPE</Text>
 
           </Animated.View>
-
+            
           <Image style={{flex:1,height:null,width: null,resizeMode: 'cover', borderRadius:20}} source={item.uri}></Image>
 
-        </Animated.View>
+          <Button title="Go to details" 
+            onPress={()=> this.props.navigation.navigate('Home')}/>
 
-        
+        </Animated.View>
       )
       }
       else {
@@ -208,7 +208,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Swipe',
   }
 );
 
