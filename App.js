@@ -4,7 +4,8 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Panel from './src/components/Panel';
 import InfoElegido from './src/components/InfoElegido';
-
+import Login from './src/components/login/Login';
+import Registration from "./src/components/registration/Registration";
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
@@ -189,6 +190,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View>
+        <Login/>
         <Text>Details Screen</Text>
         <Button title="Go to details" 
         onPress={()=> this.props.navigation.navigate('Swipe')}/>
@@ -203,6 +205,7 @@ const AppNavigator = createStackNavigator(
     Elegido: InfoElegido,
     Filter: FilterScreen,
     Swipe: SwipeScreen,
+
   },
   {
     initialRouteName: 'Home',

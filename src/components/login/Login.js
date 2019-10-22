@@ -1,8 +1,8 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity  } from 'react-native';
-import LoginForm from  './LoginForm'
 import Registration from '../registration/Registration';
+import LoginForm from "./LoginForm";
 
 // create a component
 class Login extends Component {
