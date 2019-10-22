@@ -16,15 +16,20 @@ class LoginForm extends Component {
     }
 
     grantAccess() {
-        const data = require('../../../data/users.json');
-        for (let u of data) {
-            console.log(u["apellido"]);
-            console.log(u["username"]);
-            if (u["username"] === this.state.username && u["password"] === this.state.password) {
-                console.log("ACCESO APROBADO");
-                break;
-            }
-        }
+        fetch('http://172.20.10.9:3000/users')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                let users = responseJson;
+                for(let u of users){
+                    if (u["user"]["username"] === this.state.username && u["user"]["password"] === this.state.password) {
+                        console.log("ACCESO APROBADO");
+                        break;
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }
 
     handleLoginClick() {
