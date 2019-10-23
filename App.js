@@ -12,16 +12,6 @@ import data from './data/DB.json';
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
-const Users = [
-  { id: "1", uri: require('./assets/1.jpg') },
-  { id: "2", uri: require('./assets/2.jpg') },
-  { id: "3", uri: require('./assets/3.jpg') },
-  { id: "4", uri: require('./assets/4.jpg') },
-  { id: "5", uri: require('./assets/5.jpg') },
-]
-
-
-
 class SwipeScreen extends React.Component {
   static navigationOption = {
     title: 'Home',
@@ -29,11 +19,12 @@ class SwipeScreen extends React.Component {
 
   constructor() {
     super()
-    console.log(Users);
+
     this.position = new Animated.ValueXY()
 
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      todos:[]
     }
 
     this.rotate = this.position.x.interpolate({
@@ -74,6 +65,15 @@ class SwipeScreen extends React.Component {
       extrapolate: 'clamp'
     })
   }
+
+  componentDidMount(){
+    fetch('http://192.168.0.12:3000/perros')
+    .then(res=>res.json())
+    .then((data)=>{this.setState({todos:data})
+    console.log(this.state.todos)
+  }).catch(console.log)
+  }
+
   componentWillMount() {
     this.PanResponder = PanResponder.create({
 
@@ -107,7 +107,7 @@ class SwipeScreen extends React.Component {
 
   renderUsers = () => {
 
-    return Users.map((item, i) => {
+    return this.state.todos.map((item, i) => {
 
       if (i < this.state.currentIndex) {
         return null
@@ -131,10 +131,10 @@ class SwipeScreen extends React.Component {
 
             </Animated.View>
 
-            <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={item.uri}></Image>
+            <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={{uri:item.imagen}}></Image>
 
             <Button title="Go to details"
-              onPress={() => this.props.navigation.navigate('Home')} />
+              onPress={() => this.props.navigation.navigate('Home',{Id:item.Id})} />
 
           </Animated.View>
         )
@@ -210,7 +210,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Swipe',
   }
 );
 
