@@ -10,12 +10,18 @@ function ayuda(nn) {
 
 console.log(ayuda());
 
+
+const data1= fetch('http://192.168.0.38:3000/perros');
+
+console.log(fetch('http://192.168.0.38:3000/perros'))
+
 export default class InfoElegido extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            Data: Data,
+            data1: data1,
             nn: "Chick",
             show: false
         };
@@ -30,7 +36,7 @@ export default class InfoElegido extends Component {
     render() {
         return (
             <View>
-                {this.state.Data.filter(ayuda(this.state.nn)).map(function(
+                {this.state.data1.filter(ayuda(this.state.nn)).map(function(
                     perro
                 ) {
                     return (

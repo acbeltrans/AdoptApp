@@ -21,6 +21,8 @@ const Users = [
 
 
 class SwipeScreen extends React.Component {
+
+
   static navigationOption = {
     title:'Home',
   }
@@ -208,7 +210,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: 'Swipe',
+    initialRouteName: 'Elegido',
   }
 );
 
