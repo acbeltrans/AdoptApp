@@ -2,7 +2,7 @@
   "perros": [
     {
       "id": 1,
-      "nombre": "Farlee",
+      "nombre": "Max",
       "raza": "criollo",
       "edad": 10,
       "tamano": "pequeño",
@@ -12,8 +12,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola! Me encontraron en un basurero hace unos meses, me rescataron y ahora estoy buscando una familia que me quiera.",
+      "imagen": "https://www.thisischile.cl/wp-content/uploads/2017/11/notaperritos.png"
     },
     {
       "id": 2,
@@ -27,12 +27,12 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Fui rescatada hace un tiempo y sigo buscando una familia que me quiera pero me de mi espacio.",
+      "imagen": "https://cuantoviven.net/wp-content/uploads/2014/04/cuanto-viven-gatos.jpg"
     },
     {
       "id": 3,
-      "nombre": "Kakalina",
+      "nombre": "Kira",
       "raza": "criollo",
       "edad": 4,
       "tamano": "grande",
@@ -42,8 +42,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola humano. Fui rescatada de un criadero donde no era feliz. Quiero ser feliz por eso busco una familia para vivir feliz por siempre.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6UuGduj-PsjPEkqniS8qXGEcRvkBZQPiDXZSUXIelj4iGdth3"
     },
     {
       "id": 4,
@@ -57,8 +57,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola estoy buscando una familia. Fui abandonado por mi anterior familia. Extraño tener una familia humana y me gusta mucho dormir.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MuZwGY8uwQaXEkx-m5a3v0sI2IuXJYIv0S_WZTHC_1miRNaZ"
     },
     {
       "id": 5,
@@ -72,12 +72,12 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación bigotes",
-      "historia": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola! Me gusta mucho jugar y correr y domir. Busco una familia que me quiera y cuide y juegue a la pelota conmigo. Me gusta jugar con humanos y otros perros.",
+      "imagen": "https://static.iris.net.co/semana/upload/images/2019/6/13/619614_1.jpg"
     },
     {
       "id": 6,
-      "nombre": "Felicle",
+      "nombre": "Felix",
       "raza": "criollo",
       "edad": 7,
       "tamano": "pequeno",
@@ -87,12 +87,12 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación tepa",
-      "historia": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola fui abandonado, pero estoy listo para una familia que me quiera y me cuide.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0kKLk976Mbe1hRk9vEFGgT3nXdzqvHp9cu0-7YRUjlutmVMxv"
     },
     {
       "id": 7,
-      "nombre": "Hamnet",
+      "nombre": "Homero",
       "raza": "criollo",
       "edad": 3,
       "tamano": "grande",
@@ -102,12 +102,12 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola! Estoy en busca de una familia que me quiera por siempre, me gusta mucho jugar y dormir.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuLtFQBASyfCiRYTF_3rWqxvskNha2c-_iupefKvqxzNv71Qv"
     },
     {
       "id": 8,
-      "nombre": "Osbourn",
+      "nombre": "Tiger",
       "raza": "criollo",
       "edad": 6,
       "tamano": "mediano",
@@ -117,27 +117,27 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación tepa",
-      "historia": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Estoy buscando un hogar, no soy muy sociable pero igual necesito alguien que me quiera.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRip-plhq1qJhN5-IdILlSCFmpX5TReZlXU6v3KDbFSfoE2Rjmo"
     },
     {
       "id": 9,
-      "nombre": "Bard",
+      "nombre": "Bimbo",
       "raza": "criollo",
       "edad": 7,
-      "tamano": "pequeno",
+      "tamano": "pequeño",
       "pelaje": "largo",
       "genero": "M",
       "especie": "perro",
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+      "historia": "Hola! Me rescataron de un hogar muy malo, soy un poco timido. Necesito alguien que me quiera.",
       "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
     },
     {
       "id": 10,
-      "nombre": "Kristofor",
+      "nombre": "Krispi",
       "raza": "criollo",
       "edad": 8,
       "tamano": "mediano",
@@ -147,12 +147,12 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación bigotes",
-      "historia": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy Krispi, soy bastante tranquilo pero muy amistoso. Busco una familia que me quiera el resto de mi vida.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-9g0Ol1E-NYpjPh_WNlL0y_GKt9B0oMJrlCam_2unEbaKL4TeIA"
     },
     {
       "id": 11,
-      "nombre": "Isis",
+      "nombre": "Iris",
       "raza": "criollo",
       "edad": 5,
       "tamano": "grande",
@@ -162,12 +162,12 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy Iris, me caen muy bien los humanos, los perros no tanto. Necesito una familia.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYCXXGL0ntA6psE5I1n_J-fDLtZxfNuJQVRXeKOOlvcMDWLYTr3g"
     },
     {
       "id": 12,
-      "nombre": "Amelina",
+      "nombre": "Astri",
       "raza": "criollo",
       "edad": 3,
       "tamano": "grande",
@@ -177,27 +177,27 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy un gatito que quiere una familia, me rescataron de un hogar abusivo.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJzLfvJA_exmxrIUgg3UcBgQiN1Juf2cawuSIVtjIfH74FKpK1aw"
     },
     {
       "id": 13,
       "nombre": "Stacie",
       "raza": "criollo",
       "edad": 2,
-      "tamano": "pequeno",
+      "tamano": "pequeño",
       "pelaje": "corto",
       "genero": "F",
       "especie": "gato",
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy Stacie, soy una gatita muy juguetona que busca una familia con quien divertirse.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTphZom9nnQoQpXlEMNvPaETsMtXEE2afxLi7MFge4XjOkUJ484"
     },
     {
       "id": 14,
-      "nombre": "Birch",
+      "nombre": "Oso",
       "raza": "criollo",
       "edad": 10,
       "tamano": "mediano",
@@ -207,38 +207,38 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación tepa",
-      "historia": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, soy Oso, fui un perro de policia toda mi vida, ahora estoy retirado y busco tranquilidad y amor.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiUFJnTid_m0X9nDRPaI6RaYxJmEOOuxH0FzzK90gpbNomEXL8g"
     },
     {
       "id": 15,
       "nombre": "Karna",
       "raza": "criollo",
       "edad": 13,
-      "tamano": "pequeno",
+      "tamano": "pequeño",
       "pelaje": "corto",
       "genero": "F",
       "especie": "gato",
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, mi familia se mudo y me abandono. Aún busco con quien pasar el resto de mis días.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv647zFAZ1arTPk2CVyfGxwk7YBE59oj_dqWywoSiCOdoWyXm9rQ"
     },
     {
       "id": 16,
-      "nombre": "Nanon",
+      "nombre": "Nana",
       "raza": "criollo",
       "edad": 10,
-      "tamano": "pequeno",
+      "tamano": "pequeño",
       "pelaje": "corto",
       "genero": "F",
       "especie": "gato",
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Me rescataron y ahora busco una familia para siempre.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz55Ex3SSWSvdO1K2IcxImUf0_9Qk0tFFwA5K6lU7LZjEB3DS0Cg"
     },
     {
       "id": 17,
@@ -252,23 +252,23 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy un gato muy jugueton que busca un hogar con amor y momentos divertidos.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz55Ex3SSWSvdO1K2IcxImUf0_9Qk0tFFwA5K6lU7LZjEB3DS0Cg"
     },
     {
       "id": 18,
       "nombre": "Jamie",
       "raza": "criollo",
       "edad": 4,
-      "tamano": "pequeno",
+      "tamano": "pequeño",
       "pelaje": "corto",
       "genero": "M",
       "especie": "gato",
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Busco un hogar en el que me cuiden. Fui rescatado de un hogar muy feo.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF10kCsuuja-8ZAUN89owClsr1MEXITbo-l-XOkS4wzf093-xi"
     },
     {
       "id": 19,

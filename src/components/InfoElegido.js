@@ -8,12 +8,9 @@ function ayuda(nn) {
     };
 }
 
+
 console.log(ayuda());
 
-
-const data1= fetch('http://192.168.0.38:3000/perros');
-
-console.log(fetch('http://192.168.0.38:3000/perros'))
 
 export default class InfoElegido extends Component {
 
@@ -21,7 +18,7 @@ export default class InfoElegido extends Component {
         super(props);
 
         this.state = {
-            data1: data1,
+            todos:[],
             nn: "Chick",
             show: false
         };
@@ -33,10 +30,19 @@ export default class InfoElegido extends Component {
         this.setState({ show: !show });
     };
 
+    componentDidMount(){
+        fetch('http://192.168.0.38:3000/perros')
+        .then(res=>res.json())
+        .then((data)=>{this.setState({todos:data})
+        console.log(this.state.todos)
+        })
+        .catch(console.log)
+    }
+
     render() {
         return (
             <View>
-                {this.state.data1.filter(ayuda(this.state.nn)).map(function(
+                {this.state.todos.filter(ayuda(this.state.nn)).map(function(
                     perro
                 ) {
                     return (

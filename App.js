@@ -210,7 +210,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: 'Elegido',
+    initialRouteName: 'Swipe',
   }
 );
 
