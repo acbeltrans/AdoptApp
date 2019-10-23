@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import Circulo from "./Circulo.js";
+import Registration from "./registration/Registration";
 function wait(timeout) {
   return new Promise(resolve => {
     setTimeout(resolve, timeout);
@@ -57,8 +58,9 @@ export default function Panel() {
 
     }
   };
-
   const _displayData = async () => {
+
+
 
  //let response = await fetch(
      // 'http://157.253.241.84:3000/users?id='+idUser ,

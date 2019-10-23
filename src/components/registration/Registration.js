@@ -2,11 +2,15 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Login from '../login/Login'
+import Panel from  '../Panel'
 
 // create a component
 class Registration extends Component {
 
+
+
     state = {
+        showPanel: false,
         showLogin: false,
         username: '',
         nombre: '',
@@ -17,12 +21,18 @@ class Registration extends Component {
 
     }
 
+handleShowPanel() {
+        console.log("Intentando mostrar panel");
+        console.log(this.state.showPanel);
+        this.setState({ showPanel: !this.state.showPanel });
+    }
 
     handleShowLogin() {
         console.log("Adentro de funcon onpress");
         console.log(this.state.showLogin);
         this.setState({ showLogin: !this.state.showLogin });
     }
+
 
     handleClickRegister() {
         //const writeJsonFile = require('write-json-file');
@@ -80,6 +90,7 @@ class Registration extends Component {
 
     render() {
         if (this.state.showLogin) return <Login />
+        if (this.state.showPanel) return <Panel/>
         return (
             <View style={styles.regform}>
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
@@ -135,7 +146,7 @@ class Registration extends Component {
                     style={styles.input} />
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={this.handleClickRegister.bind(this)}>
+                    onPress={((this.handleShowPanel.bind(this)),this.handleClickRegister.bind(this))}>
                     <Text style={styles.buttonText}>
                         REGISTRARSE
                     </Text>
@@ -199,6 +210,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
     }
 });
+
+
 
 //make this component available to the app
 export default Registration;
