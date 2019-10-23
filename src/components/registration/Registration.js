@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Login from '../login/Login'
-import Panel from  '../Panel'
+import Panel from '../Panel'
 
 // create a component
 class Registration extends Component {
@@ -21,7 +21,7 @@ class Registration extends Component {
 
     }
 
-handleShowPanel() {
+    handleShowPanel() {
         console.log("Intentando mostrar panel");
         console.log(this.state.showPanel);
         this.setState({ showPanel: !this.state.showPanel });
@@ -66,7 +66,7 @@ handleShowPanel() {
                 };
                 console.log(usuario);
 
-                fetch('http://157.253.241.84:3000/users', {
+                fetch('http://172.20.10.9:3000/users', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -75,12 +75,15 @@ handleShowPanel() {
                     body: JSON.stringify({
                         user: usuario
                     }),
-                }).catch( error => {
+                })
+                .then(res => {
+                    this.handleShowPanel();
+                })
+                .catch(error => {
                     console.log(error);
                     //this.handleShowLogin();
                 });
-                this.handleShowLogin();
-                
+
             }
 
         } else {
@@ -90,7 +93,7 @@ handleShowPanel() {
 
     render() {
         if (this.state.showLogin) return <Login />
-        if (this.state.showPanel) return <Panel/>
+        if (this.state.showPanel) return <Panel />
         return (
             <View style={styles.regform}>
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
@@ -146,7 +149,7 @@ handleShowPanel() {
                     style={styles.input} />
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={((this.handleShowPanel.bind(this)),this.handleClickRegister.bind(this))}>
+                    onPress={this.handleClickRegister.bind(this)}>
                     <Text style={styles.buttonText}>
                         REGISTRARSE
                     </Text>
