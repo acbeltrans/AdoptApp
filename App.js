@@ -7,6 +7,8 @@ import InfoElegido from './src/components/InfoElegido';
 import Login from './src/components/login/Login';
 import Registration from "./src/components/registration/Registration";
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import data from './data/DB.json';
+
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
@@ -27,7 +29,7 @@ class SwipeScreen extends React.Component {
 
   constructor() {
     super()
-
+    console.log(Users);
     this.position = new Animated.ValueXY()
 
     this.state = {

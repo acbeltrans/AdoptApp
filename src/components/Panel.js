@@ -66,57 +66,57 @@ export default function Panel() {
      // 'http://157.253.241.84:3000/users?id='+idUser ,
     //);
     // let user = await response.json().then(data => console.log(data.user));
-     //let id = user['id'];
-     //console.log(id);
+    //let id = user['id'];
+    //console.log(id);
 
 
-      const perro = await AsyncStorage.getItem("perro");
-      const pequeño = await AsyncStorage.getItem("pequeño");
-      const gato = await AsyncStorage.getItem("gato");
-      const mediano = await AsyncStorage.getItem("mediano");
-      const grande = await AsyncStorage.getItem("grande");
-      const peloL = await AsyncStorage.getItem("peloL");
-      const activo = await AsyncStorage.getItem("activo");
-      const peloC = await AsyncStorage.getItem("peloC");
-      const adulto = await AsyncStorage.getItem("adulto");
-      const sedentario = await AsyncStorage.getItem("sedentario");
-      const bebe = await AsyncStorage.getItem("bebe");
-      const sociable = await AsyncStorage.getItem("sociable");
-      let usuario = {
-                   username: "y",
-                    nombre: "y",
-                    apellido: "y",
-                    correo: "y",
-                    password: "y",
-        filtros: [
-          {
-            perro: perro,
-            gato: gato,
-            pequeno: pequeño,
-            mediano: mediano,
-            grande: grande,
-            peloLargo: peloL,
-            peloCorto: peloC,
-            activo: activo,
-            sedentario: sedentario,
-            sociable: sociable,
-            adulto: adulto,
-            bebe: bebe,
-          }]
-      };
+    const perro = await AsyncStorage.getItem("perro");
+    const pequeño = await AsyncStorage.getItem("pequeño");
+    const gato = await AsyncStorage.getItem("gato");
+    const mediano = await AsyncStorage.getItem("mediano");
+    const grande = await AsyncStorage.getItem("grande");
+    const peloL = await AsyncStorage.getItem("peloL");
+    const activo = await AsyncStorage.getItem("activo");
+    const peloC = await AsyncStorage.getItem("peloC");
+    const adulto = await AsyncStorage.getItem("adulto");
+    const sedentario = await AsyncStorage.getItem("sedentario");
+    const bebe = await AsyncStorage.getItem("bebe");
+    const sociable = await AsyncStorage.getItem("sociable");
+    let usuario = {
+      username: "y",
+      nombre: "y",
+      apellido: "y",
+      correo: "y",
+      password: "y",
+      filtros: [
+        {
+          perro: perro,
+          gato: gato,
+          pequeno: pequeño,
+          mediano: mediano,
+          grande: grande,
+          peloLargo: peloL,
+          peloCorto: peloC,
+          activo: activo,
+          sedentario: sedentario,
+          sociable: sociable,
+          adulto: adulto,
+          bebe: bebe,
+        }]
+    };
 
-      fetch('http://157.253.241.84:3000/users/'+idUser, {
-                    method: 'PUT',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        user: usuario
-                    }),
-                }).catch( error => {
-console.log("hubo un error");
-                });
+    fetch('http://157.253.241.84:3000/users/' + idUser, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: usuario
+      }),
+    }).catch(error => {
+      console.log("hubo un error");
+    });
   };
 
   const _changeData = async (stateCircle, txtCircle) => {
