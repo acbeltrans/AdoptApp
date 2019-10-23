@@ -2,11 +2,15 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Login from '../login/Login'
+import Panel from '../Panel'
 
 // create a component
 class Registration extends Component {
 
+
+
     state = {
+        showPanel: false,
         showLogin: false,
         username: '',
         nombre: '',
@@ -17,12 +21,18 @@ class Registration extends Component {
 
     }
 
+    handleShowPanel() {
+        console.log("Intentando mostrar panel");
+        console.log(this.state.showPanel);
+        this.setState({ showPanel: !this.state.showPanel });
+    }
 
     handleShowLogin() {
         console.log("Adentro de funcon onpress");
         console.log(this.state.showLogin);
         this.setState({ showLogin: !this.state.showLogin });
     }
+
 
     handleClickRegister() {
         //const writeJsonFile = require('write-json-file');
@@ -56,7 +66,7 @@ class Registration extends Component {
                 };
                 console.log(usuario);
 
-                fetch('http://157.253.241.84:3000/users', {
+                fetch('http://172.20.10.9:3000/users', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -65,12 +75,15 @@ class Registration extends Component {
                     body: JSON.stringify({
                         user: usuario
                     }),
-                }).catch( error => {
+                })
+                .then(res => {
+                    this.handleShowPanel();
+                })
+                .catch(error => {
                     console.log(error);
                     //this.handleShowLogin();
                 });
-                this.handleShowLogin();
-                
+
             }
 
         } else {
@@ -80,6 +93,7 @@ class Registration extends Component {
 
     render() {
         if (this.state.showLogin) return <Login />
+        if (this.state.showPanel) return <Panel />
         return (
             <View style={styles.regform}>
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
@@ -199,6 +213,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
     }
 });
+
+
 
 //make this component available to the app
 export default Registration;

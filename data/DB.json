@@ -780,25 +780,25 @@
     },
     {
       "user": {
-        "username": "y",
-        "nombre": "y",
-        "apellido": "y",
-        "correo": "y",
-        "password": "y",
+        "username": "juan",
+        "nombre": "juan",
+        "apellido": "pedro",
+        "correo": "sd",
+        "password": "sdfds",
         "filtros": [
           {
-            "perro": "si",
-            "gato": "si",
-            "pequeno": "si",
-            "mediano": "si",
+            "perro": "no",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
             "grande": "si",
-            "peloLargo": "si",
-            "peloCorto": "si",
+            "peloLargo": "no",
+            "peloCorto": "no",
             "activo": "si",
-            "sedentario": "si",
-            "sociable": "si",
-            "adulto": "si",
-            "bebe": "si"
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
           }
         ]
       },
@@ -957,6 +957,30 @@
         }
       },
       "id": 8
+    },
+    {
+      "user": {
+        "username": "user",
+        "nombre": "pedro",
+        "apellido": "perez",
+        "correo": "email",
+        "password": "123",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 9
     }
   ]
 }
