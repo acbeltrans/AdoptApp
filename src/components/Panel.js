@@ -29,7 +29,7 @@ export default function Panel() {
   let apellido = '';
   let correo = '';
   let password = '';
-  let idUser = "10";
+  let idUser = '';
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
@@ -39,11 +39,32 @@ export default function Panel() {
     setStateCircle(stateCircle);
     setTxtCircle(txtCircle);
   }
+  const _getID= async () => {
+   const us = await AsyncStorage.getItem("usuarioS")
+    fetch('http://192.168.0.9:3000/users?user.username='+us )
+            .then((response) => response.json())
+            .then((responseJson) => {
+                let users = responseJson;
+                for(let u of users){
+                  idUser = u["id"]
+                  userName = u["user"]["username"];
+                  nombre = u["user"]["nombre"];
+                  apellido = u["user"]["apellido"];
+                  correo = u["user"]["correo"];
+                  password = u["user"]["password"];
+                  console.log(idUser);
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+  }
+
   function start(estado) {
     if (!this.state) {
       estado = true;
+      _getID();
       _storeData();
-      prueba();
     }
   }
   const _storeData = async () => {
@@ -65,25 +86,7 @@ export default function Panel() {
     }
   };
 
- function  prueba() {
-    fetch('http://192.168.0.9:3000/users?id='+idUser)
-            .then((response) => response.json())
-            .then((responseJson) => {
-                let users = responseJson;
-                for(let u of users){
-                  userName = u["user"]["username"];
-                  nombre = u["user"]["nombre"];
-                  apellido = u["user"]["apellido"];
-                  correo = u["user"]["correo"];
-                  password = u["user"]["password"];
-                  console.log(userName);
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
 
- }
   const _displayData = async () => {
 
 

@@ -1,13 +1,15 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity,AsyncStorage } from 'react-native';
 import Login from '../login/Login'
 import Panel from '../Panel'
 
 // create a component
 class Registration extends Component {
 
-
+ passInfo = async () =>{
+    await AsyncStorage.setItem("usuarioS", this.state.username);
+    };
 
     state = {
         showPanel: false,
@@ -90,6 +92,7 @@ class Registration extends Component {
             console.log('Hace falta llenar todos los campos');
         }
         this.handleShowPanel.bind(this);
+        this.passInfo();
     }
 
     render() {
