@@ -789,13 +789,13 @@
           {
             "perro": "no",
             "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
+            "pequeno": "si",
+            "mediano": "si",
             "grande": "si",
             "peloLargo": "no",
             "peloCorto": "no",
             "activo": "si",
-            "sedentario": "no",
+            "sedentario": "si",
             "sociable": "no",
             "adulto": "no",
             "bebe": "no"
@@ -981,6 +981,200 @@
         }
       },
       "id": 9
+    },
+    {
+      "user": {
+        "username": "user",
+        "nombre": "Hector ",
+        "apellido": "Castellanos",
+        "correo": "correo",
+        "password": "123",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "si",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "no",
+            "peloCorto": "no",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 10
+    },
+    {
+      "user": {
+        "username": "segunda",
+        "nombre": "prueba",
+        "apellido": "panel",
+        "correo": "correi",
+        "password": "123",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 11
+    },
+    {
+      "user": {
+        "username": "user",
+        "nombre": "prueba",
+        "apellido": "prueba",
+        "correo": "prueba",
+        "password": "1",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 12
+    },
+    {
+      "user": {
+        "username": "otro",
+        "nombre": "otro",
+        "apellido": "otro",
+        "correo": "otro",
+        "password": "1",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 13
+    },
+    {
+      "user": {
+        "username": "ya",
+        "nombre": "estoy",
+        "apellido": "cansado",
+        "correo": "vida",
+        "password": "hpta",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 14
+    },
+    {
+      "user": {
+        "username": "otra",
+        "nombre": "prueba",
+        "apellido": "mas",
+        "correo": "correo",
+        "password": "123",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 15
+    },
+    {
+      "user": {
+        "username": "a",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 16
+    },
+    {
+      "user": {
+        "username": "b",
+        "nombre": "b",
+        "apellido": "b",
+        "correo": "b",
+        "password": "b",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 17
     }
   ]
 }

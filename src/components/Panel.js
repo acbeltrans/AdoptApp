@@ -29,7 +29,7 @@ export default function Panel() {
   let apellido = '';
   let correo = '';
   let password = '';
-  let idUser = "2";
+  let idUser = "10";
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
@@ -43,6 +43,7 @@ export default function Panel() {
     if (!this.state) {
       estado = true;
       _storeData();
+      prueba();
     }
   }
   const _storeData = async () => {
@@ -86,8 +87,7 @@ export default function Panel() {
   const _displayData = async () => {
 
 
-console.log("apellido");
-    console.log(apellido);
+
 
       const perro = await AsyncStorage.getItem("perro");
       const pequeño = await AsyncStorage.getItem("pequeño");
@@ -233,53 +233,53 @@ fetch('http://192.168.0.9:3000/users/'+idUser, {
         <View>
           <Circulo
             text="Pequeño"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Mediano"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={(start(estado), handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Grande"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Activo"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Adulto"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Bebe"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={(start(estado), handleCircle, _changeData)}
           ></Circulo>
         </View>
         <View>
           <Circulo
             text="Gato"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Perro"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Pelo largo"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={( start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Pelo corto"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={(start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Sedentario"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={(start(estado),handleCircle, _changeData)}
           ></Circulo>
           <Circulo
             text="Sociable"
-            circle={(start(estado), handleCircle, _changeData, prueba)}
+            circle={(start(estado), handleCircle, _changeData)}
           ></Circulo>
         </View>
       </View>

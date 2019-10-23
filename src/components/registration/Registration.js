@@ -66,7 +66,7 @@ class Registration extends Component {
                 };
                 console.log(usuario);
 
-                fetch('http://172.20.10.9:3000/users', {
+                fetch('http://192.168.0.9:3000/users', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -89,6 +89,7 @@ class Registration extends Component {
         } else {
             console.log('Hace falta llenar todos los campos');
         }
+        this.handleShowPanel.bind(this);
     }
 
     render() {

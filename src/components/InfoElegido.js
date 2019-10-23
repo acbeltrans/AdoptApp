@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
-import Data from '../../data/DB.json';
+
 
 function ayuda(nn) {
     return function(x) {
