@@ -8,14 +8,17 @@ function ayuda(nn) {
     };
 }
 
+
 console.log(ayuda());
 
+
 export default class InfoElegido extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            Data: Data,
+            todos:[],
             nn: "Chick",
             show: false
         };
@@ -27,10 +30,19 @@ export default class InfoElegido extends Component {
         this.setState({ show: !show });
     };
 
+    componentDidMount(){
+        fetch('http://192.168.0.38:3000/perros')
+        .then(res=>res.json())
+        .then((data)=>{this.setState({todos:data})
+        console.log(this.state.todos)
+        })
+        .catch(console.log)
+    }
+
     render() {
         return (
             <View>
-                {this.state.Data.filter(ayuda(this.state.nn)).map(function(
+                {this.state.todos.filter(ayuda(this.state.nn)).map(function(
                     perro
                 ) {
                     return (
