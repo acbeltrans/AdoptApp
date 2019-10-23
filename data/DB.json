@@ -1,4 +1,4 @@
-{
+﻿{
   "perros": [
     {
       "id": 1,
@@ -761,12 +761,190 @@
         "password": "11111",
         "filtros": [
           {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "si",
+            "peloCorto": "no",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 1
+    },
+    {
+      "user": {
+        "username": "ss",
+        "nombre": "sofia",
+        "apellido": "sarmi",
+        "correo": "sofis.b7@hotmail.co",
+        "password": "sss",
+        "filtros": {
+          "perro": "si",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "si",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "si",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 2
+    },
+    {
+      "user": {
+        "username": "carla",
+        "nombre": "rami",
+        "apellido": "rami",
+        "correo": "hhh",
+        "password": "hhh",
+        "filtros": {
+          "perro": "si",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "si",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "si",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 3
+    },
+    {
+      "user": {
+        "username": "donUsuario",
+        "nombre": "h",
+        "apellido": "h",
+        "correo": "as",
+        "password": "as",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "no",
+            "peloCorto": "no",
+            "activo": "no",
+            "sedentario": "si",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 4
+    },
+    {
+      "user": {
+        "username": "qwert",
+        "nombre": "as",
+        "apellido": "s",
+        "correo": "a",
+        "password": "a",
+        "filtros": [
+          {
             "perro": "no",
             "gato": "no",
             "pequeno": "no",
             "mediano": "no",
+            "grande": "si",
+            "peloLargo": "no",
+            "peloCorto": "si",
+            "activo": "no",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 5
+    },
+    {
+      "user": {
+        "username": "nertyas",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "as",
+        "password": "as",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "no",
+            "peloCorto": "no",
+            "activo": "no",
+            "sedentario": "si",
+            "sociable": "no",
+            "adulto": "si",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 6
+    },
+    {
+      "user": {
+        "username": "poiry",
+        "nombre": "s",
+        "apellido": "d",
+        "correo": "s",
+        "password": "d",
+        "filtros": [
+          {
+            "perro": "no",
+            "gato": "si",
+            "pequeno": "no",
+            "mediano": "si",
             "grande": "no",
             "peloLargo": "no",
+            "peloCorto": "no",
+            "activo": "no",
+            "sedentario": "si",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 7
+    },
+    {
+      "user": {
+        "username": "aswedrt",
+        "nombre": "a",
+        "apellido": "s",
+        "correo": "s",
+        "password": "s",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "si",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "si",
             "peloCorto": "no",
             "activo": "no",
             "sedentario": "no",
@@ -776,5 +954,187 @@
           }
         ]
       },
-      "id": 1
-    }]}
+      "id": 8
+    },
+    {
+      "user": {
+        "username": "nomas",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "si",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "si",
+            "peloCorto": "no",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 9
+    },
+    {
+      "user": {
+        "username": "128asd",
+        "nombre": "as",
+        "apellido": "as",
+        "correo": "as",
+        "password": "as",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "si",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "no",
+            "peloCorto": "si",
+            "activo": "no",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 10
+    },
+    {
+      "user": {
+        "username": "oyfvmk",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "si",
+            "peloCorto": "no",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 11
+    },
+    {
+      "user": {
+        "username": "as1234281",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": [
+          {
+            "perro": "no",
+            "gato": "si",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "si",
+            "peloCorto": "no",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 12
+    },
+    {
+      "user": {
+        "username": "zxcds",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": [
+          {
+            "perro": "si",
+            "gato": "no",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "no",
+            "peloLargo": "no",
+            "peloCorto": "si",
+            "activo": "si",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 13
+    },
+    {
+      "user": {
+        "username": "psjsvs",
+        "nombre": "a",
+        "apellido": "a",
+        "correo": "a",
+        "password": "a",
+        "filtros": {
+          "perro": "no",
+          "gato": "no",
+          "pequeno": "no",
+          "mediano": "no",
+          "grande": "no",
+          "peloLargo": "no",
+          "peloCorto": "no",
+          "activo": "no",
+          "sedentario": "no",
+          "sociable": "no",
+          "adulto": "no",
+          "bebe": "no"
+        }
+      },
+      "id": 14
+    },
+    {
+      "user": {
+        "username": "lkj",
+        "nombre": "d",
+        "apellido": "d",
+        "correo": "d",
+        "password": "d",
+        "filtros": [
+          {
+            "perro": "no",
+            "gato": "si",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "si",
+            "peloCorto": "no",
+            "activo": "no",
+            "sedentario": "si",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
+      },
+      "id": 15
+    }
+  ]
+}

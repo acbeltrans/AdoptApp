@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
+import SwipeScreen from '../SwipeScreen';
 
 // create a component
 class LoginForm extends Component {
@@ -8,7 +9,9 @@ class LoginForm extends Component {
     state = {
         username: '',
         password: '',
-        modalFieldsVisible: false
+        modalFieldsVisible: false,
+        showSwipeScreen: false,
+        handleSwipeScreen: this.props.handleSwipeScreen
     }
 
     setModalFieldsVisible(visible) {
@@ -16,7 +19,7 @@ class LoginForm extends Component {
     }
 
     grantAccess() {
-        fetch('http://172.20.10.9:3000/users')
+        fetch('http://157.253.247.65:3000/users')
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
@@ -24,7 +27,8 @@ class LoginForm extends Component {
                 for (let u of users) {
                     if (u["user"]["username"] === this.state.username && u["user"]["password"] === this.state.password) {
                         console.log("ACCESO APROBADO");
-                        user = u;
+                        user = u['id'];
+                        
                         break;
                     }
                 }
@@ -39,6 +43,11 @@ class LoginForm extends Component {
                     );
                 }else{
                     //Añadir codigo para redirigir a la pantalla principal de un usuario loggeado
+                    console.log('Si encontro usuario.')
+                    //this.setState({showSwipeScreen: true});
+                    console.log(user);
+
+                    this.state.handleSwipeScreen(user);
                 }
             })
             .catch((error) => {

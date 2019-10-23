@@ -19,7 +19,7 @@ export default class InfoElegido extends Component {
 
         this.state = {
             todos:[],
-            nn: "Chick",
+            nn: this.props.nombre,
             show: false
         };
         this.toggleDiv = this.toggleDiv.bind(this);
@@ -31,10 +31,10 @@ export default class InfoElegido extends Component {
     };
 
     componentDidMount(){
-        fetch('http://192.168.0.38:3000/perros')
+        fetch('http://157.253.247.65:3000/perros')
         .then(res=>res.json())
         .then((data)=>{this.setState({todos:data})
-        console.log(this.state.todos)
+        //console.log(this.state.todos)
         })
         .catch(console.log)
     }
@@ -45,12 +45,17 @@ export default class InfoElegido extends Component {
                 {this.state.todos.filter(ayuda(this.state.nn)).map(function(
                     perro
                 ) {
+                    console.log(perro);
+
                     return (
-                        <View key={perro.id}>
+                        <View>
+                        <View key={perro.id} style = {styles.container}>
                             <Image
-                                style={{ width: 450, height: 350 }}
+                                style={{width: 450, height: 350 }}
                                 source={{ uri: perro.imagen }}
                             />
+                            </View>
+                        <View>
                             <Text style={styles.titleText}>{perro.nombre}</Text>
                             <Text style={styles.subText}>
                                 Edad: {perro.edad} Tamaño: {perro.tamano}{" "}
@@ -64,6 +69,8 @@ export default class InfoElegido extends Component {
                                 {perro.historia}
                             </Text>
                         </View>
+                        </View>
+
                     );
                 })}
                 <View style={containerStyle.rowContainer}>
@@ -116,11 +123,16 @@ const containerStyle = StyleSheet.create({
 });
 
 const styles = StyleSheet.create({
+    container: {
+        flexGrow: 1,
+        marginTop: 200
+    },  
     titleText: {
         fontFamily: "Times New Roman",
         fontSize: 50,
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        margin:500
     },
     subText: {
         fontFamily: "Times New Roman",

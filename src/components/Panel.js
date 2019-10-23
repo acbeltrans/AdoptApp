@@ -14,6 +14,8 @@ import {
 import Constants from "expo-constants";
 import Circulo from "./Circulo.js";
 import Registration from "./registration/Registration";
+import SwipeScreen from './SwipeScreen';
+
 function wait(timeout) {
   return new Promise(resolve => {
     setTimeout(resolve, timeout);
@@ -24,6 +26,7 @@ export default function Panel() {
   const [txtCircle, setTxtCircle] = useState("");
   const [refreshing, setRefreshing] = React.useState(false);
   const estado = useState(false);
+  let swipe = false;
   let userName = '';
   let nombre ='';
   let apellido = '';
@@ -35,13 +38,20 @@ export default function Panel() {
 
     wait(2000).then(() => setRefreshing(false));
   }, [refreshing]);
+
+  function handleSwipeScreenPress(){
+    console.log("Adentro de funcon onpress");
+    console.log(swipe);
+    swipe = !swipe;
+    if(swipe) return <SwipeScreen/>
+}
   function handleCircle(stateCircle, txtCircle) {
     setStateCircle(stateCircle);
     setTxtCircle(txtCircle);
   }
   const _getID= async () => {
    const us = await AsyncStorage.getItem("usuarioS")
-    fetch('http://192.168.0.9:3000/users?user.username='+us )
+    fetch('http://157.253.247.65:3000/users?user.username='+us )
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
@@ -90,7 +100,7 @@ export default function Panel() {
   const _displayData = async () => {
 
 
-
+    handleSwipeScreenPress();
 
       const perro = await AsyncStorage.getItem("perro");
       const pequeño = await AsyncStorage.getItem("pequeño");
@@ -127,7 +137,7 @@ export default function Panel() {
           }]
       };
 console.log("se va hacer el put") ;
-fetch('http://192.168.0.9:3000/users/'+idUser, {
+fetch('http://157.253.247.65:3000/users/'+idUser, {
                     method: 'PUT',
                     headers: {
                         Accept: 'application/json',
@@ -139,6 +149,8 @@ fetch('http://192.168.0.9:3000/users/'+idUser, {
                 }).catch( error => {
           console.log(error);
                 });
+
+                
   };
 
   const _changeData = async (stateCircle, txtCircle) => {
@@ -217,7 +229,10 @@ fetch('http://192.168.0.9:3000/users/'+idUser, {
     }
   };
 
+
+ 
   return (
+    
     <ScrollView
       contentContainerStyle={styles.scrollView}
       refreshControl={

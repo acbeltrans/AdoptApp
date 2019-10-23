@@ -1,14 +1,22 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity  } from 'react-native';
+import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity,AsyncStorage  } from 'react-native';
 import Registration from '../registration/Registration';
 import LoginForm from "./LoginForm";
+import SwipeScreen from '../SwipeScreen';
 
 // create a component
 class Login extends Component {
     
+
+   // asignarId = async () => {
+     //   await AsyncStorage.setItem("idUsurio", this.state.idUsuario);
+       // }
+
     state = {
-        showRegistration: false
+        showRegistration: false,
+        showSwipeScreen: false,
+        idUsuario: 0,
     }
 
     handleRegistrationPress(){
@@ -17,7 +25,19 @@ class Login extends Component {
         this.setState({showRegistration: !this.state.showRegistration});
     }
 
+    handleSwipeScreen(id)  {
+        console.log('Inside handleswipe screen in Login Component')
+        console.log('ID ' + id);
+        this.setState({idUsuario: id});
+        this.setState({showSwipeScreen: !this.state.showSwipeScreen});
+        console.log("ID USU"+this.state.idUsuario);
+    }
+
+   
+
     render() {
+        
+        if(this.state.showSwipeScreen) return <SwipeScreen idUsuario={this.state.idUsuario} />
         if(this.state.showRegistration) return <Registration/>
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -28,7 +48,7 @@ class Login extends Component {
                         source={require('../../images/logo.jpeg')}/>
                 </View>
                 <View style={styles.formContainer}>
-                    <LoginForm />
+                    <LoginForm  handleSwipeScreen={this.handleSwipeScreen.bind(this)} />
                 </View>
                 <TouchableOpacity 
                     style={styles.buttonRegistrarseContainer}
