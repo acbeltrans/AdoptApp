@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar, Modal, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
 
 // create a component
 class LoginForm extends Component {
@@ -20,11 +20,25 @@ class LoginForm extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
-                for(let u of users){
+                let user = null;
+                for (let u of users) {
                     if (u["user"]["username"] === this.state.username && u["user"]["password"] === this.state.password) {
                         console.log("ACCESO APROBADO");
+                        user = u;
                         break;
                     }
+                }
+                if (user == null) {
+                    Alert.alert(
+                        'Login Invalido',
+                        'El username y/o la contraseña son inválidas.',
+                        [
+                            { text: 'OK', onPress: () => console.log('OK Pressed') },
+                        ],
+                        { cancelable: false },
+                    );
+                }else{
+                    //Añadir codigo para redirigir a la pantalla principal de un usuario loggeado
                 }
             })
             .catch((error) => {
@@ -43,7 +57,15 @@ class LoginForm extends Component {
 
         } else {
             console.log('Falta rellenar valores')
-            this.setModalFieldsVisible(true);
+            //this.setModalFieldsVisible(true);
+            Alert.alert(
+                'Login Invalido',
+                'Se deben rellenar todos los campos',
+                [
+                    { text: 'OK', onPress: () => console.log('OK Pressed') },
+                ],
+                { cancelable: false },
+            );
         }
     }
 
@@ -78,27 +100,6 @@ class LoginForm extends Component {
                         LOGIN
                     </Text>
                 </TouchableOpacity>
-
-                <Modal
-                    animationType="slide"
-                    transparent={false}
-                    visible={this.state.modalFieldsVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                    }}>
-                    <View style={{ marginTop: 22 }}>
-                        <View>
-                            <Text>Hello World!</Text>
-
-                            <TouchableHighlight
-                                onPress={() => {
-                                    this.setModalFieldsVisible(!this.state.modalFieldsVisible);
-                                }}>
-                                <Text>Hide Modal</Text>
-                            </TouchableHighlight>
-                        </View>
-                    </View>
-                </Modal>
             </View>
 
         );
