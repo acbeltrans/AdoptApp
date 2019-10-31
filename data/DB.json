@@ -1,4 +1,4 @@
-﻿{
+{
   "perros": [
     {
       "id": 1,
@@ -253,7 +253,7 @@
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
       "historia": "Soy un gato muy jugueton que busca un hogar con amor y momentos divertidos.",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz55Ex3SSWSvdO1K2IcxImUf0_9Qk0tFFwA5K6lU7LZjEB3DS0Cg"
+      "imagen": "https://encolombia.com/wp-content/uploads/2017/10/Gato-Scottish-Fold-Razas-Gatos.jpg"
     },
     {
       "id": 18,
@@ -282,8 +282,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Mi nombre es Lynette y soy un perro que le gusta jugar todo el dia.",
+      "imagen": "http://static.iris.net.co/semana/upload/images//2017/11/10/546864_1.jpg"
     },
     {
       "id": 20,
@@ -297,8 +297,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy un gato rescatado y busco una nueva familia",
+      "imagen": "https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/temas/gato_persa.jpg"
     },
     {
       "id": 21,
@@ -312,8 +312,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación bigotes",
-      "historia": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Busco un hogar y una nueva familia que me quieran mucho!",
+      "imagen": "https://www.mundogatos.com/Uploads/mundogatos.com/Imagenes/raza-gato-aleman-de-pelo-largo.jpg"
     },
     {
       "id": 22,
@@ -327,8 +327,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Mi nombre es Ealasaid y soy un gato que te hará la vida muy feliz!",
+      "imagen": "https://s3-eu-west-1.amazonaws.com/barkibu-blog/blog+images/como-saber-que-raza-es-mi-gato/gato-torti2.png?"
     },
     {
       "id": 23,
@@ -342,8 +342,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Busco un hogar calido en donde me quieran mucho.",
+      "imagen": "https://www.vanguardia.com/binrepository/716x477/0c0/0d0/none/12204/WMOC/web_collie_6_big_ce_VL421202_MG19774763.jpg"
     },
     {
       "id": 24,
@@ -357,8 +357,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación bigotes",
-      "historia": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Fuí rescatado de las calles y busco a mi nueva familia",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Poligraf_Poligrafovich.JPG"
     },
     {
       "id": 25,
@@ -372,8 +372,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación bigotes",
-      "historia": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy un perro que te esperará en casa para saludarte tiempre.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyQ2jYvrwIBCdxA9bo2_Pp3DhsUd2cX8R75j4saiwHwEeU8ZuEuQ&s"
     },
     {
       "id": 26,
@@ -387,8 +387,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Me rescataron de las calles por que no tenía un hogar, espero que seamos felices juntos!",
+      "imagen": "https://http2.mlstatic.com/perro-chihuahua-pelo-largo-para-monta-D_NQ_NP_755647-MLM31987923902_082019-Q.jpg"
     },
     {
       "id": 27,
@@ -402,8 +402,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, soy un gato rescatado y busco un nuevo hogar",
+      "imagen": "https://www.ocico.co/blog/wp-content/uploads/2017/03/gato-criollo-1.jpg"
     },
     {
       "id": 28,
@@ -417,8 +417,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy un perro muy juegetón y feliz y busco un hogar.",
+      "imagen": "https://www.mascotalia.es/wp-content/uploads/2016/11/cambio-de-pelo-en-los-perros.jpg"
     },
     {
       "id": 29,
@@ -432,8 +432,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Mi nombre es y soy un gato en busca de una familia que me quiera mucho!",
+      "imagen": "https://t2.ea.ltmcdn.com/es/images/1/8/0/img_10_gatos_de_pelo_largo_21081_paso_6_600.jpg"
     },
     {
       "id": 30,
@@ -447,8 +447,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Me rescataaron de un hogar muy feo y espero encontrar un nuevo hogar feliz!",
+      "imagen": "http://elsurdiario.com.ar/wp-content/uploads/2017/01/Mestizo-248x450.jpg"
     },
     {
       "id": 31,
@@ -462,8 +462,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Mi antigua familia me abandonó y busco un dueño amable y feliz!",
+      "imagen": "https://s3-eu-west-1.amazonaws.com/barkibu-blog/blog+images/como-saber-que-raza-es-mi-gato/gato-torti2.png?"
     },
     {
       "id": 32,
@@ -477,8 +477,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, mi nombre es Konrad y me gusta jugar.",
+      "imagen": "https://www.yolo-mascotas.com/wp-content/uploads/2017/05/raza-de-perro-pequines.jpg"
     },
     {
       "id": 33,
@@ -492,8 +492,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación tepa",
-      "historia": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, mi nombre es Sloane y pasear es mi actividad favorita!",
+      "imagen": "https://i.pinimg.com/originals/f0/47/8b/f0478b2e41faf250b4305ed6f7cd1cb4.jpg"
     },
     {
       "id": 34,
@@ -507,8 +507,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Rescatado de las calles en busca de un nuevo hogar.",
+      "imagen": "https://misanimales.com/wp-content/uploads/2017/09/perros-de-pelo-corto.jpg"
     },
     {
       "id": 35,
@@ -522,8 +522,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy un gatito jugetón y busco un dueño para jugar.",
+      "imagen": "https://www.feelcats.com/blog/wp-content/uploads/2018/10/gato-gris-nebelung.jpg"
     },
     {
       "id": 36,
@@ -537,8 +537,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Me encontraron sin hogar y ahora busco uno en el que me quiran adoptar.",
+      "imagen": "https://blogs.diariovasco.com/mascotas/wp-content/uploads/sites/15/2012/07/IMAG1204_opt.jpg"
     },
     {
       "id": 37,
@@ -552,8 +552,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Espero encontrar un nuevo dueño que me quiera mucho!",
+      "imagen": "https://i.ytimg.com/vi/0YtenBKvbD4/maxresdefault.jpg"
     },
     {
       "id": 38,
@@ -567,8 +567,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy un perro muy activo y me encanta salir a pasear.",
+      "imagen": "https://i.pinimg.com/736x/35/15/5b/35155b9f75be24628a9a6dcc3fe2b664--golden-husky-golden-retriever-husky-mix.jpg"
     },
     {
       "id": 39,
@@ -582,8 +582,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Estoy en busca de un nuevo hogar para ser feliz!",
+      "imagen": "https://media.istockphoto.com/photos/domestic-long-haired-black-cat-sitting-outdoor-in-the-garden-picture-id1021858944?k=6&m=1021858944&s=170667a&w=0&h=V5NRoSb3pBwDCagy0Fu8F8vWRJM1vZlL2FURmGb_roo="
     },
     {
       "id": 40,
@@ -597,8 +597,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, mi nombre es Sophia y me gustaría tener un hogar feliz!",
+      "imagen": "https://admin.srperro.com/media/uploads/2019/07/24/highfive.jpg"
     },
     {
       "id": 41,
@@ -612,8 +612,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Busco un nuevo hogar por que me abandonaron en las calles.",
+      "imagen": "https://i.pinimg.com/originals/f7/63/44/f76344b2c3875bc5253975899268f4a5.jpg"
     },
     {
       "id": 42,
@@ -627,8 +627,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Soy un perro muy tierno y espero que me adopten para hacerlos felices.",
+      "imagen": "http://supermascotas.cl/wp-content/uploads/2017/11/1raza1_ed38.jpg"
     },
     {
       "id": 43,
@@ -642,8 +642,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola mi nombre es Yvonne y me encantan los jueguetes nuevos",
+      "imagen": "https://http2.mlstatic.com/perfecto-gato-maine-coon-exclusivos-saint-daniel-msd-D_NQ_NP_673022-MLA29635023578_032019-F.jpg"
     },
     {
       "id": 44,
@@ -657,8 +657,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Espero encontrar un nuevo hogar donde me quieran mucho",
+      "imagen": "https://static.vix.com/es/sites/default/files/styles/large/public/g/gato_1.jpg"
     },
     {
       "id": 45,
@@ -672,8 +672,8 @@
       "actividad": "sedentario",
       "sociable": true,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Fuí abandonado y me rescataron para poder buscar un hogar feliz!",
+      "imagen": "https://estaticos.muymascotas.es/media/cache/1000x750_thumb/uploads/images/video/591da7015bafe8ea51b85680/muda-pelo-perro.jpg"
     },
     {
       "id": 46,
@@ -687,8 +687,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola soy un gato rescatado y busco una nueva familia",
+      "imagen": "http://www.educa.madrid.org/web/ies.mariademolina.madrid/Alumnos02/paulayana/imagenes/maine-coon-2.jpg"
     },
     {
       "id": 47,
@@ -702,8 +702,8 @@
       "actividad": "activo",
       "sociable": true,
       "fundacion": "fundación tepa",
-      "historia": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Mi nombre es Ives y soy un gato jugetón y muy feliz.",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Bicolor_he-cat.JPG"
     },
     {
       "id": 48,
@@ -717,8 +717,8 @@
       "actividad": "sedentario",
       "sociable": false,
       "fundacion": "fundación bigotes",
-      "historia": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, soy un gatito que busca un nuevo hogar donde me quieran.",
+      "imagen": "https://besthqwallpapers.com/Uploads/14-4-2018/48339/thumb2-aegean-4k-close-up-pets-domestic-cat.jpg"
     },
     {
       "id": 49,
@@ -732,8 +732,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "fundación huellitas sin hogar",
-      "historia": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Busco un nuevo dueño que me quiera y que le gusten los paseaos como a mi.",
+      "imagen": "https://www.petdarling.com/articulos/wp-content/uploads/2015/02/razas-de-perro-pelo-corto.jpg"
     },
     {
       "id": 50,
@@ -747,8 +747,8 @@
       "actividad": "activo",
       "sociable": false,
       "fundacion": "instituto distrital de protección y bienestar animal",
-      "historia": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-      "imagen": "http://static.iris.net.co/4patas/upload/images//2016/10/20/3836_1.jpg"
+      "historia": "Hola, soy un perro rescatado y busco un nuevo hogar para poder jugar todo el dia.",
+      "imagen": "https://beeyoutravel.com/wp-content/uploads/2018/12/dog-3070470_1920.jpg"
     }
   ],
   "users": [
@@ -761,14 +761,14 @@
         "password": "11111",
         "filtros": [
           {
-            "perro": "si",
+            "perro": "no",
             "gato": "no",
             "pequeno": "no",
             "mediano": "no",
-            "grande": "si",
-            "peloLargo": "si",
+            "grande": "no",
+            "peloLargo": "no",
             "peloCorto": "no",
-            "activo": "si",
+            "activo": "no",
             "sedentario": "no",
             "sociable": "no",
             "adulto": "no",
@@ -780,361 +780,29 @@
     },
     {
       "user": {
-        "username": "ss",
-        "nombre": "sofia",
-        "apellido": "sarmi",
-        "correo": "sofis.b7@hotmail.co",
-        "password": "sss",
-        "filtros": {
-          "perro": "si",
-          "gato": "no",
-          "pequeno": "no",
-          "mediano": "si",
-          "grande": "no",
-          "peloLargo": "no",
-          "peloCorto": "si",
-          "activo": "no",
-          "sedentario": "no",
-          "sociable": "no",
-          "adulto": "no",
-          "bebe": "no"
-        }
+        "username": "usu2",
+        "nombre": "juan",
+        "apellido": "castro",
+        "correo": "juagc@gmailmcom",
+        "password": "a",
+        "filtros": [
+          {
+            "perro": "no",
+            "gato": "si",
+            "pequeno": "no",
+            "mediano": "no",
+            "grande": "si",
+            "peloLargo": "no",
+            "peloCorto": "si",
+            "activo": "no",
+            "sedentario": "no",
+            "sociable": "no",
+            "adulto": "no",
+            "bebe": "no"
+          }
+        ]
       },
       "id": 2
-    },
-    {
-      "user": {
-        "username": "carla",
-        "nombre": "rami",
-        "apellido": "rami",
-        "correo": "hhh",
-        "password": "hhh",
-        "filtros": {
-          "perro": "si",
-          "gato": "no",
-          "pequeno": "no",
-          "mediano": "si",
-          "grande": "no",
-          "peloLargo": "no",
-          "peloCorto": "si",
-          "activo": "no",
-          "sedentario": "no",
-          "sociable": "no",
-          "adulto": "no",
-          "bebe": "no"
-        }
-      },
-      "id": 3
-    },
-    {
-      "user": {
-        "username": "donUsuario",
-        "nombre": "h",
-        "apellido": "h",
-        "correo": "as",
-        "password": "as",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "si",
-            "peloLargo": "no",
-            "peloCorto": "no",
-            "activo": "no",
-            "sedentario": "si",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 4
-    },
-    {
-      "user": {
-        "username": "qwert",
-        "nombre": "as",
-        "apellido": "s",
-        "correo": "a",
-        "password": "a",
-        "filtros": [
-          {
-            "perro": "no",
-            "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "si",
-            "peloLargo": "no",
-            "peloCorto": "si",
-            "activo": "no",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 5
-    },
-    {
-      "user": {
-        "username": "nertyas",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "as",
-        "password": "as",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "si",
-            "peloLargo": "no",
-            "peloCorto": "no",
-            "activo": "no",
-            "sedentario": "si",
-            "sociable": "no",
-            "adulto": "si",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 6
-    },
-    {
-      "user": {
-        "username": "poiry",
-        "nombre": "s",
-        "apellido": "d",
-        "correo": "s",
-        "password": "d",
-        "filtros": [
-          {
-            "perro": "no",
-            "gato": "si",
-            "pequeno": "no",
-            "mediano": "si",
-            "grande": "no",
-            "peloLargo": "no",
-            "peloCorto": "no",
-            "activo": "no",
-            "sedentario": "si",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 7
-    },
-    {
-      "user": {
-        "username": "aswedrt",
-        "nombre": "a",
-        "apellido": "s",
-        "correo": "s",
-        "password": "s",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "si",
-            "mediano": "no",
-            "grande": "no",
-            "peloLargo": "si",
-            "peloCorto": "no",
-            "activo": "no",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 8
-    },
-    {
-      "user": {
-        "username": "nomas",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "a",
-        "password": "a",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "si",
-            "mediano": "no",
-            "grande": "no",
-            "peloLargo": "si",
-            "peloCorto": "no",
-            "activo": "si",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 9
-    },
-    {
-      "user": {
-        "username": "128asd",
-        "nombre": "as",
-        "apellido": "as",
-        "correo": "as",
-        "password": "as",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "si",
-            "mediano": "no",
-            "grande": "si",
-            "peloLargo": "no",
-            "peloCorto": "si",
-            "activo": "no",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 10
-    },
-    {
-      "user": {
-        "username": "oyfvmk",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "a",
-        "password": "a",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "no",
-            "peloLargo": "si",
-            "peloCorto": "no",
-            "activo": "si",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 11
-    },
-    {
-      "user": {
-        "username": "as1234281",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "a",
-        "password": "a",
-        "filtros": [
-          {
-            "perro": "no",
-            "gato": "si",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "no",
-            "peloLargo": "si",
-            "peloCorto": "no",
-            "activo": "si",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 12
-    },
-    {
-      "user": {
-        "username": "zxcds",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "a",
-        "password": "a",
-        "filtros": [
-          {
-            "perro": "si",
-            "gato": "no",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "no",
-            "peloLargo": "no",
-            "peloCorto": "si",
-            "activo": "si",
-            "sedentario": "no",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 13
-    },
-    {
-      "user": {
-        "username": "psjsvs",
-        "nombre": "a",
-        "apellido": "a",
-        "correo": "a",
-        "password": "a",
-        "filtros": {
-          "perro": "no",
-          "gato": "no",
-          "pequeno": "no",
-          "mediano": "no",
-          "grande": "no",
-          "peloLargo": "no",
-          "peloCorto": "no",
-          "activo": "no",
-          "sedentario": "no",
-          "sociable": "no",
-          "adulto": "no",
-          "bebe": "no"
-        }
-      },
-      "id": 14
-    },
-    {
-      "user": {
-        "username": "lkj",
-        "nombre": "d",
-        "apellido": "d",
-        "correo": "d",
-        "password": "d",
-        "filtros": [
-          {
-            "perro": "no",
-            "gato": "si",
-            "pequeno": "no",
-            "mediano": "no",
-            "grande": "si",
-            "peloLargo": "si",
-            "peloCorto": "no",
-            "activo": "no",
-            "sedentario": "si",
-            "sociable": "no",
-            "adulto": "no",
-            "bebe": "no"
-          }
-        ]
-      },
-      "id": 15
     }
   ]
 }

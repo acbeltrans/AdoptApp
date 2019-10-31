@@ -9,6 +9,7 @@ class Registration extends Component {
 
  passInfo = async () =>{
     await AsyncStorage.setItem("usuarioS", this.state.username);
+
     };
 
     state = {
@@ -68,7 +69,7 @@ class Registration extends Component {
                 };
                 console.log(usuario);
 
-                fetch('http://157.253.247.65:3000/users', {
+                fetch('http://192.168.0.9:3000/users', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -99,6 +100,8 @@ class Registration extends Component {
             );
             console.log('Hace falta llenar todos los campos');
         }
+        console.log('ya se registró');
+
         this.handleShowPanel.bind(this);
         this.passInfo();
     }

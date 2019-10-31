@@ -1,83 +1,71 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import {
   ScrollView,
   RefreshControl,
   Button,
   View,
   Text,
-  Alert,
   StyleSheet,
-  SafeAreaView,
-  AsyncStorage,
-  Dimensions
+  AsyncStorage,TouchableOpacity,
 } from "react-native";
 import Constants from "expo-constants";
 import Circulo from "./Circulo.js";
-import Registration from "./registration/Registration";
 import SwipeScreen from './SwipeScreen';
+import {styles} from "./Circulo";
+import {Alert} from "react-native-web";
+export default class Panel extends Component {
+state = {
+setStateCircle: false ,
+StateCircle: false,
+setTxtCircle: '',
+  txtCircle:'',
+estado: false,
+swipe:false,
+userName: '',
+nombre: '',
+apellido :'',
+correo: '',
+password: '',
+idUsuario: 0,
 
-function wait(timeout) {
-  return new Promise(resolve => {
-    setTimeout(resolve, timeout);
-  });
 }
-export default function Panel() {
-  const [stateCircle, setStateCircle] = useState(false);
-  const [txtCircle, setTxtCircle] = useState("");
-  const [refreshing, setRefreshing] = React.useState(false);
-  const estado = useState(false);
-  let swipe = false;
-  let userName = '';
-  let nombre ='';
-  let apellido = '';
-  let correo = '';
-  let password = '';
-  let idUser = '';
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
 
-    wait(2000).then(() => setRefreshing(false));
-  }, [refreshing]);
-
-  function handleSwipeScreenPress(){
+handleSwipeScreenPress(){
     console.log("Adentro de funcon onpress");
-    console.log(swipe);
-    swipe = !swipe;
-    if(swipe) return <SwipeScreen/>
+    console.log(this.state.swipe);
+    this.setState({ swipe: !this.state.swipe });
 }
-  function handleCircle(stateCircle, txtCircle) {
-    setStateCircle(stateCircle);
-    setTxtCircle(txtCircle);
-  }
-  const _getID= async () => {
+componentDidMount() {
+ this._getID.bind(this)();
+ this._storeData.bind(this)();
+}
+
+  _getID= async () => {
    const us = await AsyncStorage.getItem("usuarioS")
-    fetch('http://157.253.247.65:3000/users?user.username='+us )
+   console.log("userName");
+   console.log(us);
+    fetch('http://192.168.0.9:3000/users?user.username='+us )
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
-                for(let u of users){
-                  idUser = u["id"]
-                  userName = u["user"]["username"];
-                  nombre = u["user"]["nombre"];
-                  apellido = u["user"]["apellido"];
-                  correo = u["user"]["correo"];
-                  password = u["user"]["password"];
-                  console.log(idUser);
-                }
+                  for (let u of users) {
+                    this.setState({idUsuario: u["id"]});
+                    this.setState({userName: u["user"]["username"]});
+                    this.setState({nombre: u["user"]["nombre"]});
+                    this.setState({apellido: u["user"]["apellido"]});
+                    this.setState({correo: u["user"]["correo"]});
+                    this.setState({password: u["user"]["password"]});
+                    console.log(this.state.idUsuario);
+                  }
+
             })
             .catch((error) => {
                 console.error(error);
             });
   }
 
-  function start(estado) {
-    if (!this.state) {
-      estado = true;
-      _getID();
-      _storeData();
-    }
-  }
-  const _storeData = async () => {
+ _storeData = async () => {
+  console.log("entró al store data");
     try {
       await AsyncStorage.setItem("perro", "no");
       await AsyncStorage.setItem("pequeño", "no");
@@ -95,12 +83,7 @@ export default function Panel() {
 
     }
   };
-
-
-  const _displayData = async () => {
-
-
-    handleSwipeScreenPress();
+ _displayData = async () => {
 
       const perro = await AsyncStorage.getItem("perro");
       const pequeño = await AsyncStorage.getItem("pequeño");
@@ -115,11 +98,11 @@ export default function Panel() {
       const bebe = await AsyncStorage.getItem("bebe");
       const sociable = await AsyncStorage.getItem("sociable");
       let usuario = {
-                   username: userName ,
-                    nombre: nombre,
-                    apellido: apellido,
-                    correo: correo,
-                    password: password,
+                   username: this.state.userName ,
+                    nombre: this.state.nombre,
+                    apellido: this.state.apellido,
+                    correo: this.state.correo,
+                    password: this.state.password,
         filtros: [
           {
             perro: perro,
@@ -137,7 +120,7 @@ export default function Panel() {
           }]
       };
 console.log("se va hacer el put") ;
-fetch('http://157.253.247.65:3000/users/'+idUser, {
+fetch('http://192.168.0.9:3000/users/'+this.state.idUsuario, {
                     method: 'PUT',
                     headers: {
                         Accept: 'application/json',
@@ -149,11 +132,11 @@ fetch('http://157.253.247.65:3000/users/'+idUser, {
                 }).catch( error => {
           console.log(error);
                 });
+this.handleSwipeScreenPress.bind(this)();
 
-                
   };
-
-  const _changeData = async (stateCircle, txtCircle) => {
+ _changeData = async (stateCircle, txtCircle) => {
+   console.log(stateCircle,txtCircle);
     if (txtCircle == "Pequeño") {
       if (stateCircle == true) {
         await AsyncStorage.setItem("pequeño", "si");
@@ -227,17 +210,20 @@ fetch('http://157.253.247.65:3000/users/'+idUser, {
         await AsyncStorage.setItem("sociable", "no");
       }
     }
+
   };
 
 
- 
+
+
+render (){
+
+  if (this.state.swipe) return <SwipeScreen idUsuario={this.state.idUsuario} />
   return (
-    
+
     <ScrollView
       contentContainerStyle={styles.scrollView}
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
+
       scrollEnabled={true}
     >
       <Text style={{ fontSize: 23, fontWeight: "bold", textAlign: "center" }}>
@@ -249,65 +235,78 @@ fetch('http://157.253.247.65:3000/users/'+idUser, {
 
       <View style={{ flexDirection: "row" }}>
         <View>
-          <Circulo
-            text="Pequeño"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Mediano"
-            circle={(start(estado), handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Grande"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Activo"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Adulto"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Bebe"
-            circle={(start(estado), handleCircle, _changeData)}
-          ></Circulo>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Pequeño")) }>
+          <Text style={styles.txt}>Pequeño</Text>
+        </TouchableOpacity>
+          <Text></Text>
+           <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Mediano")) }>
+          <Text style={styles.txt}>Mediano</Text>
+        </TouchableOpacity>
+          <Text></Text>
+           <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Grande")) }>
+          <Text style={styles.txt}>Grande</Text>
+        </TouchableOpacity>
+          <Text></Text>
+           <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Activo")) }>
+          <Text style={styles.txt}>Activo</Text>
+        </TouchableOpacity>
+          <Text></Text>
+           <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Adulto")) }>
+          <Text style={styles.txt}>Adulto</Text>
+        </TouchableOpacity>
+          <Text></Text>
+           <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Bebe")) }>
+          <Text style={styles.txt}>Bebe</Text>
+        </TouchableOpacity>
+
+
         </View>
         <View>
-          <Circulo
-            text="Gato"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Perro"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Pelo largo"
-            circle={( start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Pelo corto"
-            circle={(start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Sedentario"
-            circle={(start(estado),handleCircle, _changeData)}
-          ></Circulo>
-          <Circulo
-            text="Sociable"
-            circle={(start(estado), handleCircle, _changeData)}
-          ></Circulo>
-        </View>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Gato")) }>
+          <Text style={styles.txt}>Gato</Text>
+        </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Perro")) }>
+          <Text style={styles.txt}>Perro</Text>
+        </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Pelo largo")) }>
+          <Text style={styles.txt}>Pelo largo</Text>
+        </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Pelo corto")) }>
+          <Text style={styles.txt}>Pelo corto</Text>
+        </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Sedentario")) }>
+          <Text style={styles.txt}>Sedentario</Text>
+        </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity  style={styles.btnSelected}
+          onPress={(this._changeData.bind(this,true,"Sociable")) }>
+          <Text style={styles.txt}>Sociable</Text>
+        </TouchableOpacity>
+          </View>
+
       </View>
 
-      <Button title="Aceptar" color="#2e8b57" onPress={() => _displayData()} />
+      <Button title="Aceptar" color="#2e8b57" onPress={() => this._displayData.bind(this)()} />
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
+    styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Constants.statusBarHeight
@@ -316,5 +315,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     alignItems: "center"
+  },
+  SubmitButtonStyle: {
+    alignItems: "center",
+    backgroundColor: "#4682b4",
+    padding: 10,
+    borderRadius: 1000
+  },
+      TextStyle:{
+      color:'#000000',
+      textAlign:'center',
   }
 });
+
+
+}

@@ -86,14 +86,14 @@ export default class SwipeScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://157.253.247.65:3000/perros")
+    fetch("http://192.168.0.9:3000/perros")
       .then(res => res.json())
       .then(data => {
         this.setState({ todos: data });
         //console.log(this.state.todos);
       })
       .catch(console.log);
-      let url = 'http://157.253.247.65:3000/users/'+this.state.idUsuario;
+      let url = 'http://192.168.0.9:3000/users/'+this.state.idUsuario;
       console.log('URL '+ url);
     fetch(url)
       .then(response => response.json())

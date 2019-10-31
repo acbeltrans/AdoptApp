@@ -19,7 +19,7 @@ class LoginForm extends Component {
     }
 
     grantAccess() {
-        fetch('http://157.253.247.65:3000/users')
+        fetch('http://192.168.0.9:3000/users')
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
