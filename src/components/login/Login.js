@@ -7,7 +7,6 @@ import SwipeScreen from '../SwipeScreen';
 
 // create a component
 class Login extends Component {
-    
 
    // asignarId = async () => {
      //   await AsyncStorage.setItem("idUsurio", this.state.idUsuario);

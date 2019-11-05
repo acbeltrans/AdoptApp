@@ -10,12 +10,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import SwipeScreen from './src/components/SwipeScreen';
 
 
-
-
-
-
-
-
 class FilterScreen extends React.Component {
   render() {
     return (
@@ -29,6 +23,12 @@ class FilterScreen extends React.Component {
 }
 
 class HomeScreen extends React.Component {
+  
+  static navigationOptions = {
+    //To hide the ActionBar/NavigationBar
+    header: null,
+  };
+
   render() {
     return (
       <View>
