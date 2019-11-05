@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Button } from "react-native";
+import { View, Text, StyleSheet, Image, Button, Dimensions,ScrollView } from "react-native";
+
+import {AsyncStorage} from "react-native-web";
 
 
 function ayuda(nn) {
     return function(x) {
-        return x.nombre.includes(nn);
+        return x.id == nn;
     };
 }
 
@@ -19,7 +21,14 @@ export default class InfoElegido extends Component {
 
         this.state = {
             todos:[],
-            nn: this.props.nombre,
+            nn: this.props.id,
+            nombre: "",
+            imagen:"",
+            edad:"",
+            tamano:"",
+            genero:"",
+            historia:"",
+            fundacion:"",
             show: false
         };
         this.toggleDiv = this.toggleDiv.bind(this);
@@ -31,56 +40,52 @@ export default class InfoElegido extends Component {
     };
 
     componentDidMount(){
-        fetch('http://192.168.0.9:3000/perros')
-        .then(res=>res.json())
-        .then((data)=>{this.setState({todos:data})
+        console.log("El id del can ")
+        console.log(this.state.nn)
+
+        fetch('http://192.168.0.9:3000/perros/'+this.state.nn)
+      .then(response => response.json())
+      .then(responseJson => {
+        let users = responseJson;
+        this.setState({imagen:users["imagen"]})
+          this.setState({nombre:users["nombre"]})
+        this.setState({edad:users["edad"]})
+          this.setState({genero:users["genero"]})
+          this.setState({tamano:users["tamano"]})
+          this.setState({historia:users["historia"]})
+          this.setState({fundacion:users["fundacion"]})
         //console.log(this.state.todos)
         })
         .catch(console.log)
     }
 
-    render() {
+render() {
         return (
-            <View>
-                {this.state.todos.filter(ayuda(this.state.nn)).map(function(
-                    perro
-                ) {
-                    console.log(perro);
 
-                    return (
-                        <View>
-                        <View key={perro.id} style = {styles.container}>
-                            <Image
-                                style={{width: 450, height: 350 }}
-                                source={{ uri: perro.imagen }}
+       <View>
+           <Image style={{width: Dimensions.get("window").width, height: 300 }} source={{ uri: this.state.imagen }}
                             />
-                            </View>
-                        <View>
-                            <Text style={styles.titleText}>{perro.nombre}</Text>
-                            <Text style={styles.subText}>
-                                Edad: {perro.edad} Tamaño: {perro.tamano}{" "}
-                                Género: {perro.genero}
+                            <Text style={styles.titleText}>{this.state.nombre}</Text>
+                              <Text style={styles.subText}>
+                                Edad: {this.state.edad} Tamaño: {this.state.tamano}{" "}
+                                Género: {this.state.genero}
                             </Text>
-                            <Text style={styles.sub2Text}>
-                                Fundación: {perro.fundacion}
+
+                               <Text style={styles.sub2Text}>
+                                Fundación: {this.state.fundacion}
                             </Text>
                             <Text></Text>
                             <Text style={styles.sub3Text}>
-                                {perro.historia}
+                                {this.state.historia}
                             </Text>
-                        </View>
-                        </View>
 
-                    );
-                })}
-                <View style={containerStyle.rowContainer}>
+                           <View style={containerStyle.rowContainer}>
                     <Button onPress={this.toggleDiv} title="adoptar" />
                     <Button onPress={this.toggleDiv} title="apadrinar" />
                 </View>
                 {this.state.show && <Box />}
-            </View>
-        );
-    }
+                            </View>
+        );}
 }
 
 class Box extends Component {
@@ -126,27 +131,28 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         marginTop: 200
-    },  
+    },
     titleText: {
-        fontFamily: "Times New Roman",
+        //fontFamily: "Times New Roman",
         fontSize: 50,
         fontWeight: "bold",
         textAlign: "center",
-        margin:500
+
+
     },
     subText: {
-        fontFamily: "Times New Roman",
+        //fontFamily: "Times New Roman",
         fontSize: 25,
         textAlign: "center"
     },
     sub2Text: {
-        fontFamily: "Times New Roman",
+        //fontFamily: "Times New Roman",
         fontSize: 20,
         fontWeight: "bold",
         textAlign: "center"
     },
     sub3Text: {
-        fontFamily: "Times New Roman",
+        //fontFamily: "Times New Roman",
         fontSize: 18,
         textAlign: "center"
     }

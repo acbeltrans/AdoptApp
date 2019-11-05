@@ -39,8 +39,7 @@ componentDidMount() {
  this._getID.bind(this)();
  this._storeData.bind(this)();
 }
-
-  _getID= async () => {
+_getID= async () => {
    const us = await AsyncStorage.getItem("usuarioS")
    console.log("userName");
    console.log(us);
@@ -63,7 +62,6 @@ componentDidMount() {
                 console.error(error);
             });
   }
-
  _storeData = async () => {
   console.log("entró al store data");
     try {

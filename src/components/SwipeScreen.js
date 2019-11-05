@@ -18,6 +18,7 @@ import Login from "./login/Login";
 import Registration from "./registration/Registration";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -25,6 +26,7 @@ export default class SwipeScreen extends React.Component {
   static navigationOption = {
     title: "Home"
   };
+
 
   constructor(props) {
     super(props);
@@ -42,7 +44,8 @@ export default class SwipeScreen extends React.Component {
       pequeno: "",
       mediano: "",
       idUsuario: this.props.idUsuario,
-      showInfo: false
+      showInfo: false,
+      id:0,
     };
 
     this.rotate = this.position.x.interpolate({
@@ -155,11 +158,14 @@ export default class SwipeScreen extends React.Component {
     });
   }
 
+
   handleInfoClick(){
     console.log("Adentro de funcon onpress");
     console.log(this.state.showRegistration);
     this.setState({showInfo: !this.state.showInfo});
   }
+
+
 
   filtroFinal(value) {
     console.log(this.state.perro);
@@ -242,10 +248,12 @@ export default class SwipeScreen extends React.Component {
         return value.especie === "perro" && value.pelaje === "largo";
       } else {
         if (this.state.peloL === "no") {
+
           return (
             value.especie === "gato" &&
             value.pelaje === "corto" &&
             value.tamano === "grande"
+
           );
         } else if (this.state.mediano === "si") {
           return (
@@ -268,17 +276,22 @@ export default class SwipeScreen extends React.Component {
     }
   }
 
-  renderUsers = () => {
-      
-    return this.state.todos
+  renderUsers =  () => {
+      return this.state.todos
       .filter(elemento => this.filtroFinal(elemento))
       .map((item, i) => {
-        if (this.state.showInfo) return <InfoElegido nombre={item.nombre} />
+      console.log("iteración :"+ i)
+
+        if (this.state.showInfo) {console.log("id que se va a pasar");console.log(item.id); return <InfoElegido id={item.id} />}
+
         if (i < this.state.currentIndex) {
           return null;
         } else if (i == this.state.currentIndex) {
+
           return (
+
             <Animated.View
+
               {...this.PanResponder.panHandlers}
               key={item.id}
               style={[
