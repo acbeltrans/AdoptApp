@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button, Dimensions,ScrollView } from "react-native";
-
+import host from '../../host';
 import {AsyncStorage} from "react-native-web";
 
 
@@ -43,7 +43,7 @@ export default class InfoElegido extends Component {
         console.log("El id del can ")
         console.log(this.state.nn)
 
-        fetch('http://192.168.0.9:3000/perros/'+this.state.nn)
+        fetch(`http://${host}:3000/perros/${this.state.nn}`)
       .then(response => response.json())
       .then(responseJson => {
         let users = responseJson;

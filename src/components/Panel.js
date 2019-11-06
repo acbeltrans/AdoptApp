@@ -13,6 +13,8 @@ import Circulo from "./Circulo.js";
 import SwipeScreen from './SwipeScreen';
 import {styles} from "./Circulo";
 import {Alert} from "react-native-web";
+import host from '../../host';
+
 export default class Panel extends Component {
 state = {
 setStateCircle: false ,
@@ -43,7 +45,7 @@ _getID= async () => {
    const us = await AsyncStorage.getItem("usuarioS")
    console.log("userName");
    console.log(us);
-    fetch('http://192.168.0.9:3000/users?user.username='+us )
+    fetch(`http://${host}:3000/users?user.username=${us}`)
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
@@ -118,7 +120,7 @@ _getID= async () => {
           }]
       };
 console.log("se va hacer el put") ;
-fetch('http://192.168.0.9:3000/users/'+this.state.idUsuario, {
+fetch(`http://${host}:3000/users/'${this.state.idUsuario}`, {
                     method: 'PUT',
                     headers: {
                         Accept: 'application/json',

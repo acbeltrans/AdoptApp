@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
 import SwipeScreen from '../SwipeScreen';
+import host from '../../../host';
 
 // create a component
 class LoginForm extends Component {
@@ -19,7 +20,7 @@ class LoginForm extends Component {
     }
 
     grantAccess() {
-        fetch('http://192.168.0.9:3000/users')
+        fetch(`http://${host}:3000/users`)
             .then((response) => response.json())
             .then((responseJson) => {
                 let users = responseJson;
