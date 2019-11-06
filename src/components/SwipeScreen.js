@@ -19,14 +19,19 @@ import Login from "./login/Login";
 import Registration from "./registration/Registration";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import host from '../../host';
+import { createTabNavigator, createBottomTabNavigator } from "react-navigation-tabs";
+import Wishlist from "./WishList";
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
 class SwipeScreen extends React.Component {
-  static navigationOption = {
-    title: "Home"
+
+  static navigationOptions = {
+    title: 'Login',
+    header: null,
   };
+
 
 
 
@@ -175,6 +180,7 @@ class SwipeScreen extends React.Component {
               this.position.setValue({ x: 0, y: 0 });
             });
           });
+          
         } else {
           Animated.spring(this.position, {
             toValue: { x: 0, y: 0 },
@@ -477,4 +483,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SwipeScreen;
+const TabNavigator = createBottomTabNavigator({
+  Home: {screen: SwipeScreen},
+  Wishlist: {screen: Wishlist},
+})
+
+export default createAppContainer(TabNavigator);
