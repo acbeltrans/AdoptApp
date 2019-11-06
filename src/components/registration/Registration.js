@@ -1,8 +1,9 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity,AsyncStorage } from 'react-native';
-import Login from '../login/Login'
-import Panel from '../Panel'
+import Login from '../login/Login';
+import Panel from '../Panel';
+import host from '../../../host';
 
 // create a component
 class Registration extends Component {
@@ -69,7 +70,7 @@ class Registration extends Component {
                 };
                 console.log(usuario);
 
-                fetch('http://192.168.0.9:3000/users', {
+                fetch(`http://${host}:3000/users`, {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',

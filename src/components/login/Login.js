@@ -5,6 +5,7 @@ import Registration from '../registration/Registration';
 import LoginForm from "./LoginForm";
 import SwipeScreen from '../SwipeScreen';
 
+
 // create a component
 class Login extends Component {
 

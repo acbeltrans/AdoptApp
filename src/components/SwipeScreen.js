@@ -17,7 +17,7 @@ import InfoElegido from "./InfoElegido";
 import Login from "./login/Login";
 import Registration from "./registration/Registration";
 import { TouchableOpacity } from "react-native-gesture-handler";
-
+import host from '../../host';
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -89,14 +89,14 @@ export default class SwipeScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://192.168.0.9:3000/perros")
+    fetch(`http://${host}:3000/perros`)
       .then(res => res.json())
       .then(data => {
         this.setState({ todos: data });
         //console.log(this.state.todos);
       })
       .catch(console.log);
-      let url = 'http://192.168.0.9:3000/users/'+this.state.idUsuario;
+      let url = `http://${host}:3000/users/${this.state.idUsuario}`;
       console.log('URL '+ url);
     fetch(url)
       .then(response => response.json())
