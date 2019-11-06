@@ -1,9 +1,24 @@
 import React, { Component } from "react";
+import {
+    View,
+    Text,
+    Button,
+    StyleSheet,
+    Dimensions,
+    Image,
+    Animated,
+    PanResponder,
+    TouchableHighlight
+  } from "react-native";
 
-export default class WishScreen extends React.Component {
+export default class Wishlist extends React.Component {
 
-    render(){
-        return null;
-    }
+    render() {
+        return (
+          <View>
+            <Text>Hola</Text>
+          </View>
+        );
+      }
 
 }
