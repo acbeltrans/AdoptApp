@@ -76,13 +76,12 @@ class Login extends Component {
 // define your styles
 styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
+        flex: 1,
         backgroundColor: '#3498db',
         padding: 25
     },
     logoContainer: {
         alignItems: 'center',
-        flexGrow: 1,
         justifyContent: 'center',
         margin: 40
     },
