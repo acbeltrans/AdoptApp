@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity, AsyncStorage, StatusBar } from 'react-native';
 import Registration from '../registration/Registration';
 import LoginForm from "./LoginForm";
 import SwipeScreen from '../SwipeScreen';

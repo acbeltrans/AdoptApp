@@ -8,7 +8,8 @@ import {
   Image,
   Animated,
   PanResponder,
-  TouchableHighlight
+  TouchableHighlight,
+  StatusBar
 } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
@@ -102,7 +103,10 @@ class SwipeScreen extends React.Component {
         this.setState({ todos: data });
         //console.log(this.state.todos);
       })
-      .catch(console.log);
+      .catch(error => {
+        console.log("Ocurrio un error");
+        console.error(error);
+      });
 
     let idUsuario = JSON.stringify(navigation.getParam('idUsuario', 'default value'));
     let url = `http://${host}:3000/users/${idUsuario}`;
@@ -326,85 +330,85 @@ class SwipeScreen extends React.Component {
 
           return (
             <View>
-              
-            <Animated.View
-
-              {...this.PanResponder.panHandlers}
-              key={item.id}
-              style={[
-                this.rotateAndTranslate,
-                {
-                  height: SCREEN_HEIGHT - 120,
-                  width: SCREEN_WIDTH,
-                  padding: 10,
-                  position: "absolute"
-                }
-              ]}
-            >
-              
-
+              <StatusBar backgroundColor='blue' barStyle='dark-content' />
               <Animated.View
-                style={{
-                  opacity: this.likeOpacity,
-                  transform: [{ rotate: "-30deg" }],
-                  position: "absolute",
-                  top: 50,
-                  left: 40,
-                  zIndex: 1000
-                }}
+
+                {...this.PanResponder.panHandlers}
+                key={item.id}
+                style={[
+                  this.rotateAndTranslate,
+                  {
+                    height: SCREEN_HEIGHT - 120,
+                    width: SCREEN_WIDTH,
+                    padding: 10,
+                    position: "absolute"
+                  }
+                ]}
               >
-                <Text
+
+
+                <Animated.View
                   style={{
-                    borderWidth: 1,
-                    borderColor: "green",
-                    color: "green",
-                    fontSize: 32,
-                    fontWeight: "800",
-                    padding: 10
+                    opacity: this.likeOpacity,
+                    transform: [{ rotate: "-30deg" }],
+                    position: "absolute",
+                    top: 50,
+                    left: 40,
+                    zIndex: 1000
                   }}
                 >
-                  LIKE
+                  <Text
+                    style={{
+                      borderWidth: 1,
+                      borderColor: "green",
+                      color: "green",
+                      fontSize: 32,
+                      fontWeight: "800",
+                      padding: 10
+                    }}
+                  >
+                    LIKE
                 </Text>
-              </Animated.View>
+                </Animated.View>
 
-              <Animated.View
-                style={{
-                  opacity: this.dislikeOpacity,
-                  transform: [{ rotate: "30deg" }],
-                  position: "absolute",
-                  top: 50,
-                  right: 40,
-                  zIndex: 1000
-                }}
-              >
-                <Text
+                <Animated.View
                   style={{
-                    borderWidth: 1,
-                    borderColor: "red",
-                    color: "red",
-                    fontSize: 32,
-                    fontWeight: "800",
-                    padding: 10
+                    opacity: this.dislikeOpacity,
+                    transform: [{ rotate: "30deg" }],
+                    position: "absolute",
+                    top: 50,
+                    right: 40,
+                    zIndex: 1000
                   }}
                 >
-                  NOPE
+                  <Text
+                    style={{
+                      borderWidth: 1,
+                      borderColor: "red",
+                      color: "red",
+                      fontSize: 32,
+                      fontWeight: "800",
+                      padding: 10
+                    }}
+                  >
+                    NOPE
                 </Text>
+                </Animated.View>
+
+                <Image
+                  style={{
+                    flex: 1,
+                    height: null,
+                    width: null,
+                    resizeMode: "cover",
+                    borderRadius: 20
+                  }}
+                  source={{ uri: item.imagen }}
+                ></Image>
+
+
               </Animated.View>
-
-              <Image
-                style={{
-                  flex: 1,
-                  height: null,
-                  width: null,
-                  resizeMode: "cover",
-                  borderRadius: 20
-                }}
-                source={{ uri: item.imagen }}
-              ></Image>
-
-
-            </Animated.View>
-            <TouchableOpacity
+              <TouchableOpacity
                 style={styles.buttonContainer}
                 onPress={() => this.handleElegido(item)}>
                 <Text style={styles.buttonText}>
