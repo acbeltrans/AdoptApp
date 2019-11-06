@@ -488,4 +488,5 @@ const TabNavigator = createBottomTabNavigator({
   Wishlist: {screen: Wishlist},
 })
 
-export default createAppContainer(TabNavigator);
+//export default createAppContainer(TabNavigator);
+export default SwipeScreen;
