@@ -1,13 +1,14 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, AsyncStorage, Alert, KeyboardAvoidingView } from 'react-native';
 import Login from '../login/Login';
 import Panel from '../Panel';
 import host from '../../../host';
+import KeyboardShift from '../KeyboardShift';
 
 // create a component
 class Registration extends Component {
-    
+
     static navigationOptions = {
         title: 'Registro',
     };
@@ -90,7 +91,7 @@ class Registration extends Component {
                         //this.handleShowPanel();
                         //navigate('Filter');
                         //this.passInfo();
-                        navigate('Panel', {username: this.state.username});
+                        navigate('Panel', { username: this.state.username });
                     })
                     .catch(error => {
                         console.log(error);
@@ -122,13 +123,17 @@ class Registration extends Component {
         if (this.state.showLogin) return <Login />
         //if (this.state.showPanel) return <Panel />
         return (
+            <KeyboardShift>
+                {()=> (
             <View style={styles.regform}>
+
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
                 <TextInput
                     placeholder="Username"
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
                     onChangeText={(userVal) => { this.setState({ username: userVal }) }}
+                    onSubmitEditing={() => this.nombreInput.focus()}
                     autoCapitalize="none"
                     autoCorrect={false}
                     style={styles.input} />
@@ -137,6 +142,8 @@ class Registration extends Component {
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
                     onChangeText={(nombreVal) => { this.setState({ nombre: nombreVal }) }}
+                    onSubmitEditing={() => this.apellidoInput.focus()}
+                    ref={(input) => this.nombreInput = input}
                     autoCapitalize="none"
                     autoCorrect={false}
                     style={styles.input} />
@@ -145,6 +152,8 @@ class Registration extends Component {
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
                     onChangeText={(apellidoVal) => { this.setState({ apellido: apellidoVal }) }}
+                    ref={(input) => this.apellidoInput = input}
+                    onSubmitEditing={() => this.emailInput.focus()}
                     keyboardType="email-address"
                     autoCapitalize="none"
                     autoCorrect={false}
@@ -154,6 +163,8 @@ class Registration extends Component {
                     placeholderTextColor="rgba(255,255,255, 0.7)"
                     returnKeyType="next"
                     onChangeText={(emailVal) => { this.setState({ correo: emailVal }) }}
+                    onSubmitEditing={() => this.passwordInput.focus()}
+                    ref={(input) => this.emailInput = input}
                     keyboardType="email-address"
                     autoCapitalize="none"
                     autoCorrect={false}
@@ -164,6 +175,7 @@ class Registration extends Component {
                     secureTextEntry
                     returnKeyType="next"
                     onChangeText={(passwordVal) => { this.setState({ password: passwordVal }) }}
+                    onSubmitEditing={() => this.confirmPasswordInput.focus()}
                     ref={(input) => this.passwordInput = input}
                     style={styles.input} />
                 <TextInput
@@ -172,8 +184,9 @@ class Registration extends Component {
                     secureTextEntry
                     returnKeyType="go"
                     onChangeText={(confirmPassVal) => { this.setState({ confirmPassword: confirmPassVal }) }}
-                    ref={(input) => this.passwordInput = input}
+                    ref={(input) => this.confirmPasswordInput = input}
                     style={styles.input} />
+
                 <TouchableOpacity
                     style={styles.buttonContainer}
                     onPress={this.handleClickRegister.bind(this)}>
@@ -188,13 +201,19 @@ class Registration extends Component {
                         CANCELAR
                     </Text>
                 </TouchableOpacity>
-            </View>
+            </View>)}
+            </KeyboardShift>
         );
     }
 }
 
 // define your styles
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#3498db',
+        padding: 25
+    },
     regform: {
         flexGrow: 1,
         backgroundColor: '#3498db',
