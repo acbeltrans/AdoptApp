@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, AsyncStorage, Alert, KeyboardAvoidingView } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, AsyncStorage, Alert, StatusBar, ScrollView } from 'react-native';
 import Login from '../login/Login';
 import Panel from '../Panel';
 import host from '../../../host';
@@ -124,84 +124,86 @@ class Registration extends Component {
         //if (this.state.showPanel) return <Panel />
         return (
             <KeyboardShift>
-                {()=> (
-            <View style={styles.regform}>
+                {() => (
+                    <ScrollView scrollEnabled={true} style={{backgroundColor: "#3498db"}}>
+                        <View style={styles.regform}>
+                            <StatusBar backgroundColor='blue' barStyle='dark-content' />
+                            <Text style={styles.title}>Registrate en AdoptApp!</Text>
+                            <TextInput
+                                placeholder="Username"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                returnKeyType="next"
+                                onChangeText={(userVal) => { this.setState({ username: userVal }) }}
+                                onSubmitEditing={() => this.nombreInput.focus()}
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                style={styles.input} />
+                            <TextInput
+                                placeholder="Nombre"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                returnKeyType="next"
+                                onChangeText={(nombreVal) => { this.setState({ nombre: nombreVal }) }}
+                                onSubmitEditing={() => this.apellidoInput.focus()}
+                                ref={(input) => this.nombreInput = input}
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                style={styles.input} />
+                            <TextInput
+                                placeholder="Apellido"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                returnKeyType="next"
+                                onChangeText={(apellidoVal) => { this.setState({ apellido: apellidoVal }) }}
+                                ref={(input) => this.apellidoInput = input}
+                                onSubmitEditing={() => this.emailInput.focus()}
+                                keyboardType="email-address"
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                style={styles.input} />
+                            <TextInput
+                                placeholder="Email"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                returnKeyType="next"
+                                onChangeText={(emailVal) => { this.setState({ correo: emailVal }) }}
+                                onSubmitEditing={() => this.passwordInput.focus()}
+                                ref={(input) => this.emailInput = input}
+                                keyboardType="email-address"
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                style={styles.input} />
+                            <TextInput
+                                placeholder="Password"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                secureTextEntry
+                                returnKeyType="next"
+                                onChangeText={(passwordVal) => { this.setState({ password: passwordVal }) }}
+                                onSubmitEditing={() => this.confirmPasswordInput.focus()}
+                                ref={(input) => this.passwordInput = input}
+                                style={styles.input} />
+                            <TextInput
+                                placeholder="Confirm password"
+                                placeholderTextColor="rgba(255,255,255, 0.7)"
+                                secureTextEntry
+                                returnKeyType="go"
+                                onChangeText={(confirmPassVal) => { this.setState({ confirmPassword: confirmPassVal }) }}
+                                ref={(input) => this.confirmPasswordInput = input}
+                                style={styles.input} />
 
-                <Text style={styles.title}>Registrate en AdoptApp!</Text>
-                <TextInput
-                    placeholder="Username"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    returnKeyType="next"
-                    onChangeText={(userVal) => { this.setState({ username: userVal }) }}
-                    onSubmitEditing={() => this.nombreInput.focus()}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    style={styles.input} />
-                <TextInput
-                    placeholder="Nombre"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    returnKeyType="next"
-                    onChangeText={(nombreVal) => { this.setState({ nombre: nombreVal }) }}
-                    onSubmitEditing={() => this.apellidoInput.focus()}
-                    ref={(input) => this.nombreInput = input}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    style={styles.input} />
-                <TextInput
-                    placeholder="Apellido"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    returnKeyType="next"
-                    onChangeText={(apellidoVal) => { this.setState({ apellido: apellidoVal }) }}
-                    ref={(input) => this.apellidoInput = input}
-                    onSubmitEditing={() => this.emailInput.focus()}
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    style={styles.input} />
-                <TextInput
-                    placeholder="Email"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    returnKeyType="next"
-                    onChangeText={(emailVal) => { this.setState({ correo: emailVal }) }}
-                    onSubmitEditing={() => this.passwordInput.focus()}
-                    ref={(input) => this.emailInput = input}
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    style={styles.input} />
-                <TextInput
-                    placeholder="Password"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    secureTextEntry
-                    returnKeyType="next"
-                    onChangeText={(passwordVal) => { this.setState({ password: passwordVal }) }}
-                    onSubmitEditing={() => this.confirmPasswordInput.focus()}
-                    ref={(input) => this.passwordInput = input}
-                    style={styles.input} />
-                <TextInput
-                    placeholder="Confirm password"
-                    placeholderTextColor="rgba(255,255,255, 0.7)"
-                    secureTextEntry
-                    returnKeyType="go"
-                    onChangeText={(confirmPassVal) => { this.setState({ confirmPassword: confirmPassVal }) }}
-                    ref={(input) => this.confirmPasswordInput = input}
-                    style={styles.input} />
-
-                <TouchableOpacity
-                    style={styles.buttonContainer}
-                    onPress={this.handleClickRegister.bind(this)}>
-                    <Text style={styles.buttonText}>
-                        REGISTRARSE
+                            <TouchableOpacity
+                                style={styles.buttonContainer}
+                                onPress={this.handleClickRegister.bind(this)}>
+                                <Text style={styles.buttonText}>
+                                    REGISTRARSE
                     </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.buttonContainerCancelar}
-                    onPress={() => navigate('Login')}>
-                    <Text style={styles.buttonText}>
-                        CANCELAR
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.buttonContainerCancelar}
+                                onPress={() => navigate('Login')}>
+                                <Text style={styles.buttonText}>
+                                    CANCELAR
                     </Text>
-                </TouchableOpacity>
-            </View>)}
+                            </TouchableOpacity>
+                        </View>
+                    </ScrollView>)}
             </KeyboardShift>
         );
     }
