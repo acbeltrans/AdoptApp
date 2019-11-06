@@ -1,15 +1,19 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity,AsyncStorage } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
 import Login from '../login/Login';
 import Panel from '../Panel';
 import host from '../../../host';
 
 // create a component
 class Registration extends Component {
+    
+    static navigationOptions = {
+        title: 'Registro',
+    };
 
- passInfo = async () =>{
-    await AsyncStorage.setItem("usuarioS", this.state.username);
+    passInfo = async () => {
+        await AsyncStorage.setItem("usuarioS", this.state.username);
 
     };
 
@@ -24,12 +28,12 @@ class Registration extends Component {
         confirmPassword: '',
 
     }
-
+    /*
     handleShowPanel() {
         console.log("Intentando mostrar panel");
         console.log(this.state.showPanel);
         this.setState({ showPanel: !this.state.showPanel });
-    }
+    }*/
 
     handleShowLogin() {
         console.log("Adentro de funcon onpress");
@@ -40,6 +44,7 @@ class Registration extends Component {
 
     handleClickRegister() {
         //const writeJsonFile = require('write-json-file');
+        const { navigate } = this.props.navigation;
 
         if (this.state.username != '' && this.state.nombre != '' && this.state.apellido != '' && this.state.correo != '' && this.state.password != '' && this.state.confirmPassword != '') {
             console.log("Se llenaron todos los campos");
@@ -80,13 +85,17 @@ class Registration extends Component {
                         user: usuario
                     }),
                 })
-                .then(res => {
-                    this.handleShowPanel();
-                })
-                .catch(error => {
-                    console.log(error);
-                    //this.handleShowLogin();
-                });
+                    .then(res => {
+                        console.log("Adentro del bloque.");
+                        //this.handleShowPanel();
+                        //navigate('Filter');
+                        this.passInfo();
+                        navigate('Panel', {username: this.state.username});
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        //this.handleShowLogin();
+                    });
 
             }
 
@@ -101,15 +110,17 @@ class Registration extends Component {
             );
             console.log('Hace falta llenar todos los campos');
         }
-        console.log('ya se registró');
+        //console.log('ya se registró');
 
-        this.handleShowPanel.bind(this);
-        this.passInfo();
+
+        //this.handleShowPanel.bind(this);
+
     }
 
     render() {
+        const { navigate } = this.props.navigation;
         if (this.state.showLogin) return <Login />
-        if (this.state.showPanel) return <Panel />
+        //if (this.state.showPanel) return <Panel />
         return (
             <View style={styles.regform}>
                 <Text style={styles.title}>Registrate en AdoptApp!</Text>
@@ -172,7 +183,7 @@ class Registration extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonContainerCancelar}
-                    onPress={this.handleShowLogin.bind(this)}>
+                    onPress={() => navigate('Login')}>
                     <Text style={styles.buttonText}>
                         CANCELAR
                     </Text>

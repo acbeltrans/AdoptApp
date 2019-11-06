@@ -15,6 +15,10 @@ console.log(ayuda());
 
 
 export default class InfoElegido extends Component {
+    
+    static navigationOptions = {
+        title: 'Información Mascota',
+    };
 
     constructor(props) {
         super(props);
@@ -22,6 +26,7 @@ export default class InfoElegido extends Component {
         this.state = {
             todos:[],
             nn: this.props.id,
+            //nn: JSON.stringify(this.props.getParam('otherParam', 'default value')),
             nombre: "",
             imagen:"",
             edad:"",
