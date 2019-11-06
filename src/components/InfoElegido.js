@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         backgroundColor: '#2ecc71',
-        paddingVertical: 15,
+        paddingVertical: 5,
         height: 45,
         borderRadius: 30,
         marginHorizontal: 20,
@@ -221,6 +221,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FFF',
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 25,
     }
 });

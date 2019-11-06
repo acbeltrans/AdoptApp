@@ -418,7 +418,7 @@ class SwipeScreen extends React.Component {
                 style={styles.buttonContainer}
                 onPress={() => this.handleElegido(item)}>
                 <Text style={styles.buttonText}>
-                  Go to details
+                  Ver mas!
                     </Text>
               </TouchableOpacity>
             </View>
@@ -470,16 +470,16 @@ class SwipeScreen extends React.Component {
 const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: '#2ecc71',
-    paddingVertical: 15,
+    paddingVertical: 5,
     height: 45,
     borderRadius: 30,
-    marginHorizontal: 85
+    marginHorizontal: 85, 
   },
   buttonText: {
     textAlign: 'center',
     color: '#FFF',
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: 25,
   }
 });
 

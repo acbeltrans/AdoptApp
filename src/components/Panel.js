@@ -286,7 +286,7 @@ export default class Panel extends Component {
 
           scrollEnabled={true}
         >
-          <Text style={{ fontSize: 30, fontWeight: "bold", textAlign: "center" }}>
+          <Text style={{ fontSize: 23, fontWeight: "bold", textAlign: "center" }}>
             ¿Cómo es tu mascota ideal ?
       </Text>
           <Text style={{ fontSize: 10, fontWeight: "bold", textAlign: "center" }}>
