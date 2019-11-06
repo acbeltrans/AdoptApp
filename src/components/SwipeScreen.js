@@ -22,7 +22,7 @@ import host from '../../host';
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-export default class SwipeScreen extends React.Component {
+class SwipeScreen extends React.Component {
   static navigationOption = {
     title: "Home"
   };
@@ -33,6 +33,7 @@ export default class SwipeScreen extends React.Component {
     super(props);
 
     this.position = new Animated.ValueXY();
+    this.handleElegido = this.handleElegido.bind(this);
 
     this.state = {
       currentIndex: 0,
@@ -299,9 +300,20 @@ export default class SwipeScreen extends React.Component {
     }
   }
 
-  renderUsers = () => {
+  handleElegido(item) {
+    console.log("Inside handle elegido method");
     const { navigate } = this.props.navigation;
-    return this.state.todos
+    //() => navigate('Elegido', { id: item.id })
+
+    console.log(`Item: ${item}`);
+    console.log(`ID Item: ${item.id}`);
+
+    navigate('Elegido', { id: item.id });
+  }
+
+  renderUsers = () => {
+    let datosAnimales = this.state.todos;
+    return datosAnimales
       .filter(elemento => this.filtroFinal(elemento))
       .map((item, i) => {
         console.log("iteración :" + i)
@@ -313,7 +325,8 @@ export default class SwipeScreen extends React.Component {
         } else if (i == this.state.currentIndex) {
 
           return (
-
+            <View>
+              
             <Animated.View
 
               {...this.PanResponder.panHandlers}
@@ -328,6 +341,8 @@ export default class SwipeScreen extends React.Component {
                 }
               ]}
             >
+              
+
               <Animated.View
                 style={{
                   opacity: this.likeOpacity,
@@ -387,11 +402,16 @@ export default class SwipeScreen extends React.Component {
                 source={{ uri: item.imagen }}
               ></Image>
 
-              <Button
-                title="Go to details"
-                onPress={() => navigate('Elegido', { id: item.id })}
-              />
+
             </Animated.View>
+            <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => this.handleElegido(item)}>
+                <Text style={styles.buttonText}>
+                  Go to details
+                    </Text>
+              </TouchableOpacity>
+            </View>
           );
         } else {
           return (
@@ -435,3 +455,22 @@ export default class SwipeScreen extends React.Component {
     );
   }
 }
+
+// define your styles
+const styles = StyleSheet.create({
+  buttonContainer: {
+    backgroundColor: '#2ecc71',
+    paddingVertical: 15,
+    height: 45,
+    borderRadius: 30,
+    marginHorizontal: 85
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 15,
+  }
+});
+
+export default SwipeScreen;

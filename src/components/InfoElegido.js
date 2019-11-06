@@ -25,7 +25,7 @@ export default class InfoElegido extends Component {
 
         this.state = {
             todos:[],
-            nn: this.props.id,
+            nn: "",
             //nn: JSON.stringify(this.props.getParam('otherParam', 'default value')),
             nombre: "",
             imagen:"",
@@ -45,10 +45,13 @@ export default class InfoElegido extends Component {
     };
 
     componentDidMount(){
-        console.log("El id del can ")
-        console.log(this.state.nn)
+        console.log("El id del can ");
+        //console.log(this.state.nn);
+        const { navigation } = this.props;
+        const id = navigation.getParam('id', 'default value');
+        console.log(id);
 
-        fetch(`http://${host}:3000/perros/${this.state.nn}`)
+        fetch(`http://${host}:3000/perros/${id}`)
       .then(response => response.json())
       .then(responseJson => {
         let users = responseJson;
@@ -61,7 +64,7 @@ export default class InfoElegido extends Component {
           this.setState({fundacion:users["fundacion"]})
         //console.log(this.state.todos)
         })
-        .catch(console.log)
+        .catch(console.log);
     }
 
 render() {
