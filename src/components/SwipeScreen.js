@@ -171,6 +171,7 @@ class SwipeScreen extends React.Component {
               this.position.setValue({ x: 0, y: 0 });
             });
           });
+          
         } else {
           Animated.spring(this.position, {
             toValue: { x: 0, y: 0 },

@@ -8,7 +8,10 @@ import Login from './src/components/login/Login';
 import Registration from "./src/components/registration/Registration";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import SwipeScreen from './src/components/SwipeScreen';
+import WishList from './src/components/WishList'
 
+const SCREEN_HEIGHT = Dimensions.get("window").height;
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
 class FilterScreen extends React.Component {
   render() {
@@ -23,11 +26,6 @@ class FilterScreen extends React.Component {
 }
 
 class HomeScreen extends React.Component {
-  
-  static navigationOptions = {
-    //To hide the ActionBar/NavigationBar
-    header: null,
-  };
 
   render() {
     return (
