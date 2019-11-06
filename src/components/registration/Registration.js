@@ -11,11 +11,11 @@ class Registration extends Component {
     static navigationOptions = {
         title: 'Registro',
     };
-
+    /*
     passInfo = async () => {
         await AsyncStorage.setItem("usuarioS", this.state.username);
 
-    };
+    };*/
 
     state = {
         showPanel: false,
@@ -89,7 +89,7 @@ class Registration extends Component {
                         console.log("Adentro del bloque.");
                         //this.handleShowPanel();
                         //navigate('Filter');
-                        this.passInfo();
+                        //this.passInfo();
                         navigate('Panel', {username: this.state.username});
                     })
                     .catch(error => {

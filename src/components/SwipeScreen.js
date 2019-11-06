@@ -27,7 +27,7 @@ export default class SwipeScreen extends React.Component {
     title: "Home"
   };
 
- 
+
 
   constructor(props) {
     super(props);
@@ -90,13 +90,14 @@ export default class SwipeScreen extends React.Component {
   }
 
   componentDidMount() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
 
     console.log("Inside componentDidMount of SwipeScreen")
     fetch(`http://${host}:3000/perros`)
       .then(res => res.json())
       .then(data => {
+        console.log("PETICION DE PERROS EXITOSA");
         this.setState({ todos: data });
         //console.log(this.state.todos);
       })
@@ -108,8 +109,9 @@ export default class SwipeScreen extends React.Component {
     fetch(url)
       .then(response => response.json())
       .then(responseJson => {
+        console.log("PETICION EXITOSA");
         let users = responseJson;
-        
+
         //   this.state.filtros= u["user"]["filtros"];
         let user = users["user"];
         //user = JSON.stringify(user["user"]);
@@ -121,17 +123,25 @@ export default class SwipeScreen extends React.Component {
         //console.log("ayudaaaaaa1");
         //console.log(this.state.filtros);
         //console.log(this.state.filtros[0]["perro"]);
-        this.setState({ perro: this.state.filtros["perro"] });
-        this.setState({ peloL: this.state.filtros["peloLargo"] });
-        this.setState({ grande: this.state.filtros["grande"] });
-        this.setState({ mediano: this.state.filtros["mediano"] });
-        this.setState({ pequeno: this.state.filtros["pequeno"] });
+        let perro = myFilters[0]["perro"];
+        let peloLargo = myFilters[0]["peloLargo"];
+        let grande = myFilters[0]["grande"];
+        let mediano = myFilters[0]["mediano"];
+        let pequeno = myFilters[0]["pequeno"];
+        console.log("Perro: " + perro);
+        console.log("Type of 'perro': " + typeof perro);
+        this.setState({ perro: perro });
+        this.setState({ peloL: peloLargo });
+        this.setState({ grande: grande });
+        this.setState({ mediano: mediano });
+        this.setState({ pequeno: pequeno });
 
         //console.log(user["filtros"]["perro"])
         //console.log("ayudaaaaaa2");
         //console.log(this.state.filtros);
       })
       .catch(error => {
+        console.log("Ocurrio un error");
         console.error(error);
       });
   }
@@ -180,6 +190,7 @@ export default class SwipeScreen extends React.Component {
 
 
   filtroFinal(value) {
+    console.log("Inside filtro final method.")
     console.log(this.state.perro);
     //console.log(this.state.filtros.perro);
     //const x= this.state.filtros
@@ -289,7 +300,7 @@ export default class SwipeScreen extends React.Component {
   }
 
   renderUsers = () => {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return this.state.todos
       .filter(elemento => this.filtroFinal(elemento))
       .map((item, i) => {
@@ -378,7 +389,7 @@ export default class SwipeScreen extends React.Component {
 
               <Button
                 title="Go to details"
-                onPress={() =>navigate('Elegido', {id: item.id}) }
+                onPress={() => navigate('Elegido', { id: item.id })}
               />
             </Animated.View>
           );

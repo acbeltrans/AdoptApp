@@ -35,6 +35,26 @@ export default class Panel extends Component {
     password: '',
     idUsuario: 0,
 
+    perro: "no",
+    gato: "no",
+    pequeno: "no",
+    mediano: "no",
+    grande: "no",
+    peloLargo: "no",
+    peloCorto: "no",
+    activo: "no",
+    sedentario: "no",
+    sociable: "no",
+    adulto: "no",
+    bebe: "no",
+
+
+  }
+
+  componentDidMount() {
+    console.log("Inside component did mount of Panel");
+    this._getID.bind(this)();
+    //this._storeData.bind(this)();
   }
 
   handleSwipeScreenPress() {
@@ -42,14 +62,11 @@ export default class Panel extends Component {
     console.log(this.state.swipe);
     this.setState({ swipe: !this.state.swipe });
   }
-  componentDidMount() {
-    console.log("Inside component did mount of Panel");
-    this._getID.bind(this)();
-    this._storeData.bind(this)();
-  }
-  _getID = async () => {
+
+  _getID = () => {
+    const { navigation } = this.props;
     console.log("entró al metodo getid");
-    const us = await AsyncStorage.getItem("usuarioS")
+    const us = navigation.getParam('username', 'default value');
     //const us = JSON.stringify(navigation.getParam('username', 'default value'));
     this.setState({ idUsuario: us });
     //this.props.navigation.username;
@@ -74,6 +91,7 @@ export default class Panel extends Component {
         console.error(error);
       });
   }
+  /*
   _storeData = async () => {
     console.log("entró al store data");
     try {
@@ -92,10 +110,13 @@ export default class Panel extends Component {
     } catch (error) {
 
     }
-  };
-  _displayData = async () => {
+  };*/
+  _displayData = () => {
+    console.log("Inside display data method");
+    console.log(`Estado perro: ${this.state.perro}`);
+    console.log(`Estado pelo largo: ${this.state.peloLargo}`);
     const { navigate } = this.props.navigation;
-
+    /*
     const perro = await AsyncStorage.getItem("perro");
     const pequeño = await AsyncStorage.getItem("pequeño");
     const gato = await AsyncStorage.getItem("gato");
@@ -107,7 +128,7 @@ export default class Panel extends Component {
     const adulto = await AsyncStorage.getItem("adulto");
     const sedentario = await AsyncStorage.getItem("sedentario");
     const bebe = await AsyncStorage.getItem("bebe");
-    const sociable = await AsyncStorage.getItem("sociable");
+    const sociable = await AsyncStorage.getItem("sociable");*/
     let usuario = {
       username: this.state.userName,
       nombre: this.state.nombre,
@@ -116,22 +137,24 @@ export default class Panel extends Component {
       password: this.state.password,
       filtros: [
         {
-          perro: perro,
-          gato: gato,
-          pequeno: pequeño,
-          mediano: mediano,
-          grande: grande,
-          peloLargo: peloL,
-          peloCorto: peloC,
-          activo: activo,
-          sedentario: sedentario,
-          sociable: sociable,
-          adulto: adulto,
-          bebe: bebe,
+          perro: this.state.perro,
+          gato: this.state.gato,
+          pequeno: this.state.pequeno,
+          mediano: this.state.mediano,
+          grande: this.state.grande,
+          peloLargo: this.state.peloLargo,
+          peloCorto: this.state.peloCorto,
+          activo: this.state.activo,
+          sedentario: this.state.sedentario,
+          sociable: this.state.sociable,
+          adulto: this.state.adulto,
+          bebe: this.state.bebe,
         }]
     };
+    console.log(usuario);
     console.log("se va hacer el put");
-    fetch(`http://${host}:3000/users/'${this.state.idUsuario}`, {
+    console.log(`http://${host}:3000/users/${this.state.idUsuario}`);
+    fetch(`http://${host}:3000/users/${this.state.idUsuario}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',
@@ -147,79 +170,104 @@ export default class Panel extends Component {
     navigate('Swipe', { idUsuario: this.state.idUsuario });
 
   };
-  _changeData = async (stateCircle, txtCircle) => {
+
+  _changeData = (stateCircle, txtCircle) => {
     console.log(stateCircle, txtCircle);
     if (txtCircle == "Pequeño") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("pequeño", "si");
+        //await AsyncStorage.setItem("pequeño", "si");
+        this.setState({ pequeno: "si" });
       } else {
-        await AsyncStorage.setItem("pequeño", "no");
+        //await AsyncStorage.setItem("pequeño", "no");
+        this.setState({ pequeno: "no" });
       }
     } else if (txtCircle == "Mediano") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("mediano", "si");
+        //await AsyncStorage.setItem("mediano", "si");
+        this.setState({ mediano: "si" });
       } else {
-        await AsyncStorage.setItem("mediano", "no");
+        //await AsyncStorage.setItem("mediano", "no");
+        this.setState({ mediano: "no" });
       }
     } else if (txtCircle == "Grande") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("grande", "si");
+        //await AsyncStorage.setItem("grande", "si");
+        this.setState({ grande: "si" });
       } else {
-        await AsyncStorage.setItem("grande", "no");
+        //await AsyncStorage.setItem("grande", "no");
+        this.setState({ mediano: "no" });
       }
     } else if (txtCircle == "Activo") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("activo", "si");
+        //await AsyncStorage.setItem("activo", "si");
+        this.setState({ activo: "si" });
       } else {
-        await AsyncStorage.setItem("activo", "no");
+        //await AsyncStorage.setItem("activo", "no");
+        this.setState({ activo: "no" });
       }
     } else if (txtCircle == "Adulto") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("adulto", "si");
+        //await AsyncStorage.setItem("adulto", "si");
+        this.setState({ adulto: "si" });
       } else {
-        await AsyncStorage.setItem("adulto", "no");
+        //await AsyncStorage.setItem("adulto", "no");
+        this.setState({ adulto: "no" });
       }
     } else if (txtCircle == "Bebe") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("bebe", "si");
+        //await AsyncStorage.setItem("bebe", "si");
+        this.setState({ bebe: "si" });
       } else {
-        await AsyncStorage.setItem("bebe", "no");
+        //await AsyncStorage.setItem("bebe", "no");
+        this.setState({ bebe: "no" });
       }
     } else if (txtCircle == "Gato") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("gato", "si");
+        //await AsyncStorage.setItem("gato", "si");
+        this.setState({ gato: "si" });
       } else {
-        await AsyncStorage.setItem("gato", "no");
+        //await AsyncStorage.setItem("gato", "no");
+        this.setState({ gato: "no" });
       }
     } else if (txtCircle == "Perro") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("perro", "si");
+        //await AsyncStorage.setItem("perro", "si");
+        this.setState({ perro: "si" });
       } else {
-        await AsyncStorage.setItem("perro", "no");
+        //await AsyncStorage.setItem("perro", "no");
+        this.setState({ perro: "no" });
       }
     } else if (txtCircle == "Pelo largo") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("peloL", "si");
+        //await AsyncStorage.setItem("peloL", "si");
+        this.setState({ peloLargo: "si" });
       } else {
-        await AsyncStorage.setItem("peloL", "no");
+        //await AsyncStorage.setItem("peloL", "no");
+        this.setState({ peloLargo: "no" });
       }
     } else if (txtCircle == "Pelo corto") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("peloC", "si");
+        //await AsyncStorage.setItem("peloC", "si");
+        this.setState({ peloCorto: "si" });
       } else {
-        await AsyncStorage.setItem("peloC", "no");
+        //await AsyncStorage.setItem("peloC", "no");
+        this.setState({ peloCorto: "no" });
       }
     } else if (txtCircle == "Sedentario") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("sedentario", "si");
+        //await AsyncStorage.setItem("sedentario", "si");
+        this.setState({ sedentario: "si" });
       } else {
-        await AsyncStorage.setItem("sedentario", "no");
+        //await AsyncStorage.setItem("sedentario", "no");
+        this.setState({ sedentario: "no" });
       }
     } else if (txtCircle == "Sociable") {
       if (stateCircle == true) {
-        await AsyncStorage.setItem("sociable", "si");
+        //await AsyncStorage.setItem("sociable", "si");
+        this.setState({ sociable: "si" });
       } else {
-        await AsyncStorage.setItem("sociable", "no");
+        //await AsyncStorage.setItem("sociable", "no");
+        this.setState({ sociable: "no" });
       }
     }
 
@@ -313,7 +361,14 @@ export default class Panel extends Component {
 
           </View>
 
-          <Button title="Aceptar" color="#2e8b57" onPress={() => this._displayData.bind(this)()} />
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={this._displayData.bind(this)}
+          >
+            <Text style={styles.buttonText}>
+              ACEPTAR
+            </Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );
@@ -338,6 +393,20 @@ export default class Panel extends Component {
     TextStyle: {
       color: '#000000',
       textAlign: 'center',
+    },
+    buttonContainer: {
+      backgroundColor: '#2ecc71',
+      paddingVertical: 15,
+      height: 45,
+      borderRadius: 30,
+      marginTop: 20,
+      marginHorizontal: 85
+    },
+    buttonText: {
+      textAlign: 'center',
+      color: '#FFF',
+      fontWeight: 'bold',
+      fontSize: 15,
     }
   });
 
