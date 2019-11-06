@@ -44,10 +44,13 @@ const AppNavigator = createStackNavigator(
     Elegido: InfoElegido,
     Filter: FilterScreen,
     Swipe: SwipeScreen,
+    Registration: Registration,
+    Login: Login,
+    Panel: Panel,
 
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
   }
 );
 

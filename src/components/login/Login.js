@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity,AsyncStorage  } from 'react-native';
+import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity, AsyncStorage } from 'react-native';
 import Registration from '../registration/Registration';
 import LoginForm from "./LoginForm";
 import SwipeScreen from '../SwipeScreen';
@@ -9,50 +9,61 @@ import SwipeScreen from '../SwipeScreen';
 // create a component
 class Login extends Component {
 
-   // asignarId = async () => {
-     //   await AsyncStorage.setItem("idUsurio", this.state.idUsuario);
-       // }
+    // asignarId = async () => {
+    //   await AsyncStorage.setItem("idUsurio", this.state.idUsuario);
+    // }
+    static navigationOptions = {
+        title: 'Login',
+    };
 
     state = {
-        showRegistration: false,
-        showSwipeScreen: false,
+        //showRegistration: false,
+        //showSwipeScreen: false,
         idUsuario: 0,
     }
 
-    handleRegistrationPress(){
+    handleRegistrationPress() {
         console.log("Adentro de funcon onpress");
+        /*
         console.log(this.state.showRegistration);
         this.setState({showRegistration: !this.state.showRegistration});
+        */
+        this.props.navigation.navigate('Registration');
     }
 
-    handleSwipeScreen(id)  {
+
+    handleSwipeScreen(id) {
+
         console.log('Inside handleswipe screen in Login Component')
         console.log('ID ' + id);
+        const { navigate } = this.props.navigation;
+        navigate('Swipe', { idUsuario: id });
+        /*
         this.setState({idUsuario: id});
         this.setState({showSwipeScreen: !this.state.showSwipeScreen});
-        console.log("ID USU"+this.state.idUsuario);
+        console.log("ID USU"+this.state.idUsuario);*/
     }
 
-   
+
 
     render() {
-        
-        if(this.state.showSwipeScreen) return <SwipeScreen idUsuario={this.state.idUsuario} />
-        if(this.state.showRegistration) return <Registration/>
+        const { navigate } = this.props.navigation;
+        //if(this.state.showSwipeScreen) return <SwipeScreen idUsuario={this.state.idUsuario} />
+        //if(this.state.showRegistration) return <Registration/>
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
                 <View style={styles.logoContainer}>
                     <Text style={styles.title}>ADOPTAPP</Text>
-                    <Image 
+                    <Image
                         style={styles.logo}
-                        source={require('../../images/logo.jpeg')}/>
+                        source={require('../../images/logo.jpeg')} />
                 </View>
                 <View style={styles.formContainer}>
-                    <LoginForm  handleSwipeScreen={this.handleSwipeScreen.bind(this)} />
+                    <LoginForm handleSwipeScreen={this.handleSwipeScreen.bind(this)} />
                 </View>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.buttonRegistrarseContainer}
-                    onPress={this.handleRegistrationPress.bind(this)}>
+                    onPress={() => navigate('Registration')}>
                     <Text style={styles.buttonText}>
                         REGISTRARSE
                     </Text>
@@ -65,13 +76,12 @@ class Login extends Component {
 // define your styles
 styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
+        flex: 1,
         backgroundColor: '#3498db',
-        padding: 25 
+        padding: 25
     },
     logoContainer: {
         alignItems: 'center',
-        flexGrow: 1,
         justifyContent: 'center',
         margin: 40
     },

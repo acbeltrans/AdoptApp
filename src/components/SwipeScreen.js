@@ -22,16 +22,18 @@ import host from '../../host';
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-export default class SwipeScreen extends React.Component {
+class SwipeScreen extends React.Component {
   static navigationOption = {
     title: "Home"
   };
+
 
 
   constructor(props) {
     super(props);
 
     this.position = new Animated.ValueXY();
+    this.handleElegido = this.handleElegido.bind(this);
 
     this.state = {
       currentIndex: 0,
@@ -43,9 +45,9 @@ export default class SwipeScreen extends React.Component {
       grande: "",
       pequeno: "",
       mediano: "",
-      idUsuario: this.props.idUsuario,
-      showInfo: false,
-      id:0,
+      idUsuario: "",
+      //showInfo: false,
+      id: 0,
     };
 
     this.rotate = this.position.x.interpolate({
@@ -89,37 +91,58 @@ export default class SwipeScreen extends React.Component {
   }
 
   componentDidMount() {
+    const { navigation } = this.props;
+
+
+    console.log("Inside componentDidMount of SwipeScreen")
     fetch(`http://${host}:3000/perros`)
       .then(res => res.json())
       .then(data => {
+        console.log("PETICION DE PERROS EXITOSA");
         this.setState({ todos: data });
         //console.log(this.state.todos);
       })
       .catch(console.log);
-      let url = `http://${host}:3000/users/${this.state.idUsuario}`;
-      console.log('URL '+ url);
+
+    let idUsuario = JSON.stringify(navigation.getParam('idUsuario', 'default value'));
+    let url = `http://${host}:3000/users/${idUsuario}`;
+    console.log('URL ' + url);
     fetch(url)
       .then(response => response.json())
       .then(responseJson => {
+        console.log("PETICION EXITOSA");
         let users = responseJson;
 
         //   this.state.filtros= u["user"]["filtros"];
         let user = users["user"];
-        this.setState({ filtros: user["filtros"] });
+        //user = JSON.stringify(user["user"]);
+        console.log(user);
+        let myFilters = user["filtros"];
+        console.log(myFilters);
+        console.log(typeof myFilters);
+        this.setState({ filtros: myFilters });
         //console.log("ayudaaaaaa1");
         //console.log(this.state.filtros);
         //console.log(this.state.filtros[0]["perro"]);
-        this.setState({ perro: this.state.filtros[0]["perro"] });
-        this.setState({ peloL: this.state.filtros[0]["peloLargo"] });
-        this.setState({ grande: this.state.filtros[0]["grande"] });
-        this.setState({ mediano: this.state.filtros[0]["mediano"] });
-        this.setState({ pequeno: this.state.filtros[0]["pequeno"] });
+        let perro = myFilters[0]["perro"];
+        let peloLargo = myFilters[0]["peloLargo"];
+        let grande = myFilters[0]["grande"];
+        let mediano = myFilters[0]["mediano"];
+        let pequeno = myFilters[0]["pequeno"];
+        console.log("Perro: " + perro);
+        console.log("Type of 'perro': " + typeof perro);
+        this.setState({ perro: perro });
+        this.setState({ peloL: peloLargo });
+        this.setState({ grande: grande });
+        this.setState({ mediano: mediano });
+        this.setState({ pequeno: pequeno });
 
         //console.log(user["filtros"]["perro"])
         //console.log("ayudaaaaaa2");
         //console.log(this.state.filtros);
       })
       .catch(error => {
+        console.log("Ocurrio un error");
         console.error(error);
       });
   }
@@ -158,16 +181,17 @@ export default class SwipeScreen extends React.Component {
     });
   }
 
-
-  handleInfoClick(){
+  /*
+  handleInfoClick() {
     console.log("Adentro de funcon onpress");
-    console.log(this.state.showRegistration);
-    this.setState({showInfo: !this.state.showInfo});
-  }
+    console.log(this.state.showInfo);
+    this.setState({ showInfo: !this.state.showInfo });
+  }*/
 
 
 
   filtroFinal(value) {
+    console.log("Inside filtro final method.")
     console.log(this.state.perro);
     //console.log(this.state.filtros.perro);
     //const x= this.state.filtros
@@ -176,7 +200,7 @@ export default class SwipeScreen extends React.Component {
       if (this.state.peloL === "si") {
         if (this.state.grande === "si") {
           return (
-              
+
             value.especie === "perro" &&
             value.pelaje === "largo" &&
             value.tamano === "grande"
@@ -221,8 +245,8 @@ export default class SwipeScreen extends React.Component {
       }
 
       return value.especie === "perro";
-    } 
-    else if(this.state.perro === "no"){
+    }
+    else if (this.state.perro === "no") {
       console.log("entro a else");
       if (this.state.peloL === "si") {
         if (this.state.grande === "si") {
@@ -276,20 +300,33 @@ export default class SwipeScreen extends React.Component {
     }
   }
 
-  renderUsers =  () => {
-      return this.state.todos
+  handleElegido(item) {
+    console.log("Inside handle elegido method");
+    const { navigate } = this.props.navigation;
+    //() => navigate('Elegido', { id: item.id })
+
+    console.log(`Item: ${item}`);
+    console.log(`ID Item: ${item.id}`);
+
+    navigate('Elegido', { id: item.id });
+  }
+
+  renderUsers = () => {
+    let datosAnimales = this.state.todos;
+    return datosAnimales
       .filter(elemento => this.filtroFinal(elemento))
       .map((item, i) => {
-      console.log("iteración :"+ i)
+        console.log("iteración :" + i)
 
-        if (this.state.showInfo) {console.log("id que se va a pasar");console.log(item.id); return <InfoElegido id={item.id} />}
+        //if (this.state.showInfo) { console.log("id que se va a pasar"); console.log(item.id); return <InfoElegido id={item.id} /> }
 
         if (i < this.state.currentIndex) {
           return null;
         } else if (i == this.state.currentIndex) {
 
           return (
-
+            <View>
+              
             <Animated.View
 
               {...this.PanResponder.panHandlers}
@@ -304,6 +341,8 @@ export default class SwipeScreen extends React.Component {
                 }
               ]}
             >
+              
+
               <Animated.View
                 style={{
                   opacity: this.likeOpacity,
@@ -351,23 +390,28 @@ export default class SwipeScreen extends React.Component {
                   NOPE
                 </Text>
               </Animated.View>
-              
-                <Image
-                  style={{
-                    flex: 1,
-                    height: null,
-                    width: null,
-                    resizeMode: "cover",
-                    borderRadius: 20
-                  }}
-                  source={{ uri: item.imagen }}
-                ></Image>
-              
-              <Button
-                title="Go to details"
-                onPress={this.handleInfoClick.bind(this)}
-              />
+
+              <Image
+                style={{
+                  flex: 1,
+                  height: null,
+                  width: null,
+                  resizeMode: "cover",
+                  borderRadius: 20
+                }}
+                source={{ uri: item.imagen }}
+              ></Image>
+
+
             </Animated.View>
+            <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => this.handleElegido(item)}>
+                <Text style={styles.buttonText}>
+                  Go to details
+                    </Text>
+              </TouchableOpacity>
+            </View>
           );
         } else {
           return (
@@ -411,3 +455,22 @@ export default class SwipeScreen extends React.Component {
     );
   }
 }
+
+// define your styles
+const styles = StyleSheet.create({
+  buttonContainer: {
+    backgroundColor: '#2ecc71',
+    paddingVertical: 15,
+    height: 45,
+    borderRadius: 30,
+    marginHorizontal: 85
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 15,
+  }
+});
+
+export default SwipeScreen;
